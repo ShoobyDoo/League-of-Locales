@@ -7,6 +7,7 @@ import os
 import configparser
 import urllib.request
 from __init__ import __version__
+import platform
 
 
 class colors:
@@ -21,9 +22,35 @@ class colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 class locales:
 
+    # Locales
+    english = 'en_US'
+    portuguese = 'pt_BR'
+    turkish = 'tr_TR'
+    # english = 'en_GB'
+    dutch = 'de_DE'
+    # spanish = 'es_ES'
+    french = 'fr_FR'
+    italian = 'it_IT'
+    czech = 'cs_CZ'
+    greek = 'el_GR'
+    hungarian = 'hu_HU'
+    polish = 'pl_PL'
+    romanian = 'ro_RO'
+    russian = 'ru_RU'
+    spanish = 'es_MX'
+    # English = 'en_AU'
+    japanese = 'ja_JP'
+    korean = 'ko_KR'
 
+
+def os_information():
+
+    print(f"{colors.WARNING}OS:      " + platform.system() + " " + platform.release() +
+          f"\nVersion: " + platform.version() +
+          f"\nMachine: " + platform.machine())
 
 
 def auto_updates():
@@ -50,6 +77,8 @@ def auto_updates():
 
 def main():
     auto_updates()
+
+    print(f"{colors.HEADER}* League of Locales *\n * Made By Doomlad *{colors.ENDC}\n")
 
     print("Opening config file...", end="")
     league_config = open("testconfig.yaml").read()
