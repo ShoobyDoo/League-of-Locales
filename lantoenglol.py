@@ -24,7 +24,7 @@ class colors:
 
 def auto_updates():
     print("Checking for updates...", end="")
-    update_program = urllib.request.urlopen("https://raw.githubusercontent.com/Doomlad/AutoSSH/master/__init__.py")
+    update_program = urllib.request.urlopen("https://raw.githubusercontent.com/Doomlad/LANtoENG/master/__init__.py")
     read_update = update_program.read()
 
     def getVersion(string):
@@ -45,6 +45,9 @@ def auto_updates():
 
 
 def main():
+    auto_updates()
+
+    print("Version: " + __version__)
 
     print("Opening config file...", end="")
     league_config = open("testconfig.yaml").read()
@@ -63,7 +66,8 @@ def main():
     file.close()
     print(f"Wrote changes to config 'spanish' {colors.OKGREEN}->{colors.ENDC} 'english'")
 
-    user_input = input(f"{colors.WARNING}You must run league through the old client executable. Open now? y/n:{colors.ENDC} ")
+    user_input = input(f"{colors.WARNING}You must run league through the old client executable. "
+                       f"Open now? y/n:{colors.ENDC} ")
 
     if user_input == "y":
         print("Opening league...")
