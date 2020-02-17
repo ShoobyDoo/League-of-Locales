@@ -21,6 +21,10 @@ class colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+class locales:
+
+
+
 
 def auto_updates():
     print("Checking for updates...", end="")
@@ -28,26 +32,24 @@ def auto_updates():
     read_update = update_program.read()
 
     def getVersion(string):
-        getVersion.version = string[16:20]
+        getVersion.version = string[17:21]
     getVersion(str(read_update))
 
     if __version__ == getVersion.version:
         print(f"{colors.OKGREEN}Up to Date!{colors.ENDC}")
 
     elif __version__ < getVersion.version:
-        print(f"{colors.FAIL}Out of Date!{colors.ENDC}")
-        print(f"Current version: {colors.FAIL}" + __version__ + f"{colors.ENDC}\nLatest version: {colors.OKGREEN}" +
-              getVersion.version + f"{colors.ENDC}")
+        print(f"{colors.FAIL}Out of Date! [" + __version__ + f"]{colors.ENDC}{colors.OKGREEN} [" +
+              getVersion.version + f"]{colors.ENDC}")
 
     else:
-        print(f"{colors.FAIL}Warning!{colors.ENDC} The version you are on is higher than the current latest release."
-              f" This could mean you're using an illegitimate version of my software. Exercise caution!")
+        print(f"{colors.FAIL}Warning!{colors.ENDC} The version you are on {colors.FAIL}[" + __version__ + f"]"
+              f"{colors.ENDC} is higher than the current latest release {colors.OKGREEN}[" + getVersion.version + f"]"
+              f"{colors.ENDC}. {colors.FAIL}Exercise caution!{colors.ENDC}")
 
 
 def main():
     auto_updates()
-
-    print("Version: " + __version__)
 
     print("Opening config file...", end="")
     league_config = open("testconfig.yaml").read()
