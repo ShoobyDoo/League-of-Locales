@@ -1,0 +1,61 @@
+install:
+    crash_reporting:
+        type: "bugsplat"
+    game-settings:
+        accountId: 205027249
+        modified: false
+        timestamp: 1581478814049
+    gameflow-patcher-lock: null
+    gameflow-process-info: null
+    gameflow-spectate-reconnect-info: null
+    globals:
+        locale: "en_US"
+        region: "LA1"
+    last-valid-login-splash:
+        theme: "worlds2019"
+        version: "1.60"
+    lcu-settings:
+        accountId: 205027249
+        modified: false
+        timestamp: 1581458463743
+    licensesAgreedTo:
+        576F00F89F0C6BED5C0B5166E2D6D1F7: null
+        87BEA53ED9BAE0A0952904BE9A0E9C77: null
+    login-remember-me:
+        rememberMe: true
+        username: "aaronmiller97"
+    npe-splash:
+        enableNewPlayerSplash: false
+    patcher:
+        client_migrated: true
+        client_patcher_available: true
+        client_patcher_migrated_time: "2019-06-09T18:25:35Z"
+        game_migrated: true
+        game_patcher_available: true
+        game_patcher_migrated_time: "2019-06-09T18:25:35Z"
+        locales:
+        - "en_US"
+        - "en_US"
+        toggles:
+            new_client_patcher: 0
+            new_game_patcher: 0
+    perks-settings:
+        accountId: 205027249
+        modified: false
+        timestamp: 1581476869624
+    riotclient-upgrade:
+        aux-environment: "live"
+        installer-decrypt-key: "ZuV40vGHTGYoUCpx"
+        installer-filename: "rc-win.enc"
+        seq-install-attempts: 0
+        seq-success-count: 225
+        success-count: 225
+        total-install-attempts: 1
+        uninstaller-repaired: true
+        uninstaller-updated: true
+        upgrade-ready: false
+    rso-auth:
+        install-identifier: "b70de7930b470e439a7efc74e4c633cd"
+    telemetry:
+        fresh_installation: false
+        installation_id: "vUmLdg=="
