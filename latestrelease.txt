@@ -4,10 +4,10 @@
 + Fixed bug with non-c directories
 + Added release information for out of date clients
 + Numerous other bug fixes
++ In-app update downloader (Done!)
 
 ~ In progress ~
 
-- In-app update downloader
 - Cleanup codebase
 - General optimizations
 
