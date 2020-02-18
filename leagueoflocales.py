@@ -102,11 +102,12 @@ def os_information():
 
 def auto_updates():
     print("Checking for updates...", end="")
-    update_program = urllib.request.urlopen("https://raw.githubusercontent.com/Doomlad/LANtoENG/master/__init__.py")
-    read_update = update_program.read()
+    update_program = urllib.request.urlopen\
+        ("https://raw.githubusercontent.com/Doomlad/League-of-Locales/master/__init__.py")
+    read_update = update_program.read().decode('utf-8')
 
     def getVersion(string):
-        getVersion.version = string[17:21]
+        getVersion.version = string[15:19]
     getVersion(str(read_update))
 
     if __version__ == getVersion.version:
@@ -114,7 +115,7 @@ def auto_updates():
 
     elif __version__ < getVersion.version:
         print(Fore.RED + "Out of Date! \n\nCurrent...[" + __version__ + "] \n" + Fore.GREEN + "Latest..." + Fore.GREEN +
-              "[" + getVersion.version + "]\n")
+              "[" + getVersion.version + "]")
 
     else:
         print(Fore.RED + "Warning! " + Style.RESET_ALL + "Your version " + Fore.RED + "[" + __version__ + f"]"
