@@ -1,0 +1,14 @@
+~ New features ~
+
++ Added Korean support
++ Fixed bug with non-c directories
++ Added release information for out of date clients
++ Numerous other bug fixes
+
+~ In progress ~
+
+- In-app update downloader
+- Cleanup codebase
+- General optimizations
+
+Enjoy~!

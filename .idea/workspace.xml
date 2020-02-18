@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/latestrelease.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leagueoflocales.py" beforeDir="false" afterPath="$PROJECT_DIR$/leagueoflocales.py" afterDir="false" />
     </list>
@@ -122,7 +123,8 @@
       <workItem from="1582004281322" duration="747000" />
       <workItem from="1582005143960" duration="3000" />
       <workItem from="1582005967625" duration="1000" />
-      <workItem from="1582007577291" duration="8070000" />
+      <workItem from="1582007577291" duration="8865000" />
+      <workItem from="1582057364196" duration="2718000" />
     </task>
     <servers />
   </component>

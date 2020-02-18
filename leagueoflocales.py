@@ -114,8 +114,16 @@ def auto_updates():
         print(Fore.GREEN + "Up to Date!\n" + Style.RESET_ALL)
 
     elif __version__ < getVersion.version:
+
         print(Fore.RED + "Out of Date! \n\nCurrent...[" + __version__ + "] \n" + Fore.GREEN + "Latest..." + Fore.GREEN +
-              "[" + getVersion.version + "]")
+              "[" + getVersion.version + "]\n" )
+
+        release_information = urllib.request.urlopen("")
+
+        def getVersion(string):
+            getVersion.version = string[19:]
+
+        getVersion(str(read_update))
 
     else:
         print(Fore.RED + "Warning! " + Style.RESET_ALL + "Your version " + Fore.RED + "[" + __version__ + f"]"
@@ -154,7 +162,6 @@ def initial_configuration():
                 config.add_section('Locale')
                 config.set('Locale', 'Current', 'default')
                 config.set('Locale', 'Desired', 'default')
-                config.set('Locale', 'IsKorean', 'no')
                 languages_banner()
 
                 user_input = input("Choose your clients current language: ")
@@ -360,7 +367,7 @@ def initial_configuration():
                     print(Fore.RED + "CTRL + C pressed!" + Style.RESET_ALL)
 
         except KeyError:
-            print("[KeyError] Could not grab configuration from file. "
+            print(Fore.RED + "[KeyError]" + Style.RESET_ALL + " Could not grab configuration from file. "
                   "Deleting broken config...", end="")
             os.remove("config.ini")
             print(Fore.GREEN + "Done!" + Style.RESET_ALL)
@@ -500,25 +507,27 @@ def main():
         if user_input == "y":
             print("Opening league...", end="")
 
-            league_client_dir = "C:\\Riot Games\\League of Legends\\"
+            league_client_dir_c = "C:\\Riot Games\\League of Legends\\"
+            league_client_dir_d = "D:\\Riot Games\\League of Legends\\"
+            league_client_dir_e = "E:\\Riot Games\\League of Legends\\"
 
             if league_directory.counter_c > 1:
                 print(Fore.YELLOW + "Directory: C:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                os.chdir(league_client_dir)
+                os.chdir(league_client_dir_c)
                 print("Injecting locale...", end="")
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_d > 1:
                 print(Fore.YELLOW + "Directory: D:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                os.chdir(league_client_dir)
+                os.chdir(league_client_dir_d)
                 print("Injecting locale...", end="")
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_e > 1:
                 print(Fore.YELLOW + "Directory: E:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                os.chdir(league_client_dir)
+                os.chdir(league_client_dir_e)
                 print("Injecting locale...", end="")
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
@@ -532,25 +541,27 @@ def main():
         else:
             print("Opening league...", end="")
 
-            league_client_dir = "C:\\Riot Games\\League of Legends\\"
+            league_client_dir_c = "C:\\Riot Games\\League of Legends\\"
+            league_client_dir_d = "D:\\Riot Games\\League of Legends\\"
+            league_client_dir_e = "E:\\Riot Games\\League of Legends\\"
 
             if league_directory.counter_c > 1:
                 print(Fore.YELLOW + "Directory: C:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                os.chdir(league_client_dir)
+                os.chdir(league_client_dir_c)
                 print("Injecting locale...", end="")
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_d > 1:
                 print(Fore.YELLOW + "Directory: D:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                os.chdir(league_client_dir)
+                os.chdir(league_client_dir_d)
                 print("Injecting locale...", end="")
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_e > 1:
                 print(Fore.YELLOW + "Directory: E:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                os.chdir(league_client_dir)
+                os.chdir(league_client_dir_e)
                 print("Injecting locale...", end="")
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
