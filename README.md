@@ -7,6 +7,12 @@ Simply run the script and enter the options as prompted. Creates a configuration
 default current and desired language. Then, simply scans for the Riot Games directory and modifies
 the 'LeagueClientSettings.yaml' file.
 
+### Discussion
+>Consider joining the Discord server for quick access to the community and for general discussion about 
+upcoming features. Report bugs and more as well. Enjoy~!
+>
+>[Discord Server](https://discord.gg/4hajzDQ)
+
 ### Supported Locales
 
 * English
@@ -66,12 +72,6 @@ the 'LeagueClientSettings.yaml' file.
 *Step 5. Script will then launch the client and you should be able to notice the Locale has changed.*
 
 ![](https://cdn.discordapp.com/attachments/679049093913378822/679190951176044545/c4629114b6a8bb2b0499bce2017e1bd3.png)
-
-### Discussion
->Consider joining the Discord server for quick access to the community and for general discussion about 
-upcoming features. Report bugs and more as well. Enjoy~!
->
->https://discord.gg/4hajzDQ
 
 ### Important Disclaimer
 > While this software only modifies user configuration files, which is not inherently dangerous, I cannot be held 
