@@ -73,4 +73,8 @@ upcoming features. Report bugs and more as well. Enjoy~!
 >
 >https://discord.gg/4hajzDQ
 
-
+### Important Disclaimer
+> While this software only modifies user configuration files, which is not inherently dangerous, I cannot be held 
+>responsible for any penalties you may incur as a user of my program. You as the user, by using this software, 
+>understand and accept the risk associated, no matter how minimal. I do not take responsibility if you choose to modify 
+>my software at your own discretion. Thank you!

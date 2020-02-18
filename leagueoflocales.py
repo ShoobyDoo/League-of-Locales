@@ -95,10 +95,14 @@ def prerequisites():
 
 
 def os_information():
-
-    print(Fore.MAGENTA + "OS:      " + platform.system() + " " + platform.release() +
-          f"\nVersion: " + platform.version() +
-          f"\nMachine: " + platform.machine() + Style.RESET_ALL + "\n")
+    if not platform.system().lower() == "windows":
+        print(Fore.MAGENTA + "OS:      " + platform.system() + " " + platform.release() +
+                             "\nVersion: " + platform.version() +
+                             "\nMachine: " + platform.machine() +
+                             "\nLoLoc:   " + __version__ + Style.RESET_ALL + "\n")
+    else:
+        print(Fore.RED + "Unsupported Operating System! This program has only been tested on Windows. " +
+              Style.RESET_ALL)
 
 
 def auto_updates():
