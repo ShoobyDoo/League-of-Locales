@@ -532,19 +532,27 @@ def main():
         else:
             print("Opening league...", end="")
 
+            league_client_dir = "C:\\Riot Games\\League of Legends\\"
+
             if league_directory.counter_c > 1:
                 print(Fore.YELLOW + "Directory: C:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                subprocess.call(['C:\\Riot Games\\League of Legends\\LeagueClient.exe'])
+                os.chdir(league_client_dir)
+                print("Injecting locale...", end="")
+                subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_d > 1:
                 print(Fore.YELLOW + "Directory: D:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                subprocess.call(['D:\\Riot Games\\League of Legends\\LeagueClient.exe'])
+                os.chdir(league_client_dir)
+                print("Injecting locale...", end="")
+                subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_e > 1:
                 print(Fore.YELLOW + "Directory: E:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                subprocess.call(['E:\\Riot Games\\League of Legends\\LeagueClient.exe'])
+                os.chdir(league_client_dir)
+                print("Injecting locale...", end="")
+                subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             break
