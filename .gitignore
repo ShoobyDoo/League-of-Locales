@@ -1,5 +1,6 @@
 # Test config
 testconfig.yaml
+user_config.ini
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
