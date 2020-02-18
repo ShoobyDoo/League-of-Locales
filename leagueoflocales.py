@@ -116,14 +116,16 @@ def auto_updates():
     elif __version__ < getVersion.version:
 
         print(Fore.RED + "Out of Date! \n\nCurrent...[" + __version__ + "] \n" + Fore.GREEN + "Latest..." + Fore.GREEN +
-              "[" + getVersion.version + "]\n" )
+              "[" + getVersion.version + "]\n")
 
-        release_information = urllib.request.urlopen("")
+        release_information = urllib.request.urlopen\
+            ("https://raw.githubusercontent.com/Doomlad/League-of-Locales/master/latestrelease.txt")
+        read_release = release_information.read().decode('utf-8')
 
-        def getVersion(string):
-            getVersion.version = string[19:]
-
-        getVersion(str(read_update))
+        def getRelease(string):
+            getRelease.release = string
+        getRelease(str(read_release))
+        print(getRelease.release)
 
     else:
         print(Fore.RED + "Warning! " + Style.RESET_ALL + "Your version " + Fore.RED + "[" + __version__ + f"]"
