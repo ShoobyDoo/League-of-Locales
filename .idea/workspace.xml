@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="" />
+    <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leagueoflocales.py" beforeDir="false" afterPath="$PROJECT_DIR$/leagueoflocales.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,6 +119,10 @@
       <updated>1581958079702</updated>
       <workItem from="1581958089547" duration="5719000" />
       <workItem from="1581964814231" duration="33582000" />
+      <workItem from="1582004281322" duration="747000" />
+      <workItem from="1582005143960" duration="3000" />
+      <workItem from="1582005967625" duration="1000" />
+      <workItem from="1582007577291" duration="6546000" />
     </task>
     <servers />
   </component>

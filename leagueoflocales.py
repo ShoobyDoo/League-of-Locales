@@ -151,8 +151,9 @@ def initial_configuration():
                 print(Fore.RED + "Not found!" + Style.RESET_ALL + "\nGenerating first time configuration...")
                 configfile = open("user_config.ini", "w+")
                 config.add_section('Locale')
-                config.set('Locale', 'Current', 'english')
-                config.set('Locale', 'Desired', 'spanish')
+                config.set('Locale', 'Current', 'default')
+                config.set('Locale', 'Desired', 'default')
+                config.set('Locale', 'IsKorean', 'no')
                 languages_banner()
 
                 user_input = input("Choose your clients current language: ")
@@ -230,7 +231,10 @@ def initial_configuration():
                 elif user_input == '15':
                     print("Korean selected.")
                     initial_configuration.current = locales.korean
-                    config['Locale']['Current'] = initial_configuration.current
+
+                else:
+                    print(Fore.RED + "Invalid Entry!" + Style.RESET_ALL)
+                    initial_configuration()
 
                 user_input = input("Choose your desired client language: ")
 
@@ -309,12 +313,17 @@ def initial_configuration():
                     initial_configuration.desired = locales.korean
                     config['Locale']['Desired'] = initial_configuration.desired
 
+                else:
+                    print(Fore.RED + "Invalid Entry!" + Style.RESET_ALL)
+                    initial_configuration()
+
                 print("\nReview your selection... \nCurrent Locale: " + initial_configuration.current +
                       "\nDesired Locale: " + initial_configuration.desired)
                 user_input = input("\nConfirm? y/n: ")
 
                 if user_input == 'y':
                     print("Writing changes to config file...", end="")
+
                     config.write(configfile)
                     configfile.close()
                     print(Fore.GREEN + "Done!" + Style.RESET_ALL)
@@ -322,6 +331,7 @@ def initial_configuration():
 
                 elif user_input == 'n':
                     print("Restarting...")
+                    configfile.close()
                     continue
 
                 else:
@@ -339,6 +349,12 @@ def initial_configuration():
 
                     break
 
+                except KeyError:
+                    print(Fore.RED + "[KeyError]" + Style.RESET_ALL + " Could not grab configuration from file. "
+                          f"Deleting broken config...", end="")
+                    os.remove("user_config.ini")
+                    print(Fore.GREEN + "Done!" + Style.RESET_ALL)
+
                 except KeyboardInterrupt:
                     print(Fore.RED + "CTRL + C pressed!" + Style.RESET_ALL)
 
@@ -346,7 +362,7 @@ def initial_configuration():
             print("[KeyError] Could not grab configuration from file. "
                   "Deleting broken config...", end="")
             os.remove("config.ini")
-            print(f"{colors.OKGREEN}Done!{colors.ENDC}\n")
+            print(Fore.GREEN + "Done!" + Style.RESET_ALL)
             counter = 6
             for count in range(5):
                 counter -= 1
@@ -476,26 +492,34 @@ def main():
         league_directory()
 
         print(Fore.YELLOW + "\n[Wrote] " + Style.RESET_ALL + "changes to config locale " + Fore.GREEN + "->" +
-              Style.RESET_ALL + " '" + locales.english + "'\n")
+              Style.RESET_ALL + " '" + initial_configuration.desired + "'\n")
 
         user_input = input("You must run league through the old client executable. Open now? y/n: ")
 
         if user_input == "y":
             print("Opening league...", end="")
 
+            league_client_dir = "C:\\Riot Games\\League of Legends\\"
+
             if league_directory.counter_c > 1:
                 print(Fore.YELLOW + "Directory: C:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                subprocess.call(['C:\\Riot Games\\League of Legends\\LeagueClient.exe'])
+                os.chdir(league_client_dir)
+                print("Injecting locale...", end="")
+                subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_d > 1:
                 print(Fore.YELLOW + "Directory: D:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                subprocess.call(['D:\\Riot Games\\League of Legends\\LeagueClient.exe'])
+                os.chdir(league_client_dir)
+                print("Injecting locale...", end="")
+                subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             elif league_directory.counter_e > 1:
                 print(Fore.YELLOW + "Directory: E:\\Riot Games\\League of Legends\\LeagueClient.exe")
-                subprocess.call(['E:\\Riot Games\\League of Legends\\LeagueClient.exe'])
+                os.chdir(league_client_dir)
+                print("Injecting locale...", end="")
+                subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
             break
@@ -505,7 +529,7 @@ def main():
             break
 
         else:
-            print("Opening league...")
+            print("Opening league...", end="")
 
             if league_directory.counter_c > 1:
                 print(Fore.YELLOW + "Directory: C:\\Riot Games\\League of Legends\\LeagueClient.exe")

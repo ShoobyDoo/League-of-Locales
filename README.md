@@ -7,6 +7,38 @@ Simply run the script and enter the options as prompted. Creates a configuration
 default current and desired language. Then, simply scans for the Riot Games directory and modifies
 the 'LeagueClientSettings.yaml' file.
 
+### Supported Locales
+
+* English
+
+* Portuguese
+
+* Turkish
+
+* Dutch
+
+* French
+
+* Italian
+
+* Czech
+
+* Greek
+
+* Hungarian
+
+* Polish
+
+* Romanian
+
+* Russian
+
+* Spanish
+
+* Japanese
+
+* Korean
+
 ### Prerequisites
 * [Python 3+](https://www.python.org/downloads/)
 * [colorama](https://pypi.org/project/colorama/) (Handled automatically by program)
