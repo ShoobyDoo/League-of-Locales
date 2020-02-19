@@ -95,7 +95,7 @@ def prerequisites():
 
 
 def os_information():
-    if not platform.system().lower() == "windows":
+    if platform.system().lower() == "windows":
         print(Fore.MAGENTA + "OS:      " + platform.system() + " " + platform.release() +
                              "\nVersion: " + platform.version() +
                              "\nMachine: " + platform.machine() +
