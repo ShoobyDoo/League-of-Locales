@@ -1,6 +1,7 @@
 ~ [New features] ~
 
 [1.71 | BIG UPDATE]
+
 [+] Added Korean support
 [+] Fixed bug with non-c directories
 [+] Added release information for out of date clients
@@ -8,9 +9,11 @@
 [+] In-app update downloader (Done!)
 
 [1.72 | QUICK BUGFIX]
+
 [+] Fixed bug where even when user is on windows it says unsupported OS.
 
 [1.81 | BIG UPDATE]
+
 [+] Added Garena support! (Very messy, but works)
 [+] Rewrote codebase into segments
 
