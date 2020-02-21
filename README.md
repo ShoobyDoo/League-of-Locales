@@ -43,6 +43,8 @@ upcoming features. Report bugs and more as well. Enjoy~!
 
 * Korean
 
+Unfortunately, this program does not support garena yet. I tried adding garena support, however garena launches the client by getting access information through the garena client, I am unable to figure out a workaround.
+
 ### Prerequisites
 * [Python 3+](https://www.python.org/downloads/)
 * [colorama](https://pypi.org/project/colorama/) (Handled automatically by program)
