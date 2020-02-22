@@ -43,6 +43,12 @@ upcoming features. Report bugs and more as well. Enjoy~!
 
 * Korean
 
+#### New!
+
+* Chinese
+
+* Indonesian
+
 Unfortunately, this program does not support garena yet. I tried adding garena support, however garena launches the client by getting access information through the garena client, I am unable to figure out a workaround.
 
 ### Prerequisites
