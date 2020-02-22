@@ -1,7 +1,7 @@
 # Locales
 class locales:
 
-    # Locales
+    # Base Locales
     english = 'en_US'
     portuguese = 'pt_BR'
     turkish = 'tr_TR'
@@ -17,3 +17,9 @@ class locales:
     spanish = 'es_MX'
     japanese = 'ja_JP'
     korean = 'ko_KR'
+
+    # New Locales
+    indonesian = 'id_ID'
+    tagalog = 'tl_PH'
+    chinese = 'zh_CN'
+    vietnamese = 'vi_VN'

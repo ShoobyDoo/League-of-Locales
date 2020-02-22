@@ -80,6 +80,11 @@ def client_execution():
         print(Fore.RED + "Exiting..." + Style.RESET_ALL)
         exit()
 
+    elif user_input.lower() == "delete config":
+        os.remove("user_config.ini")
+        print(Fore.RED + "\n[V] Config deleted." + Style.RESET_ALL)
+        initial_configuration()
+
     else:
 
         if initial_configuration.is_garena == 'yes':

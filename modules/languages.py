@@ -1,20 +1,21 @@
 # Simple print of available banners
+try:
+    from colorama import init
+
+    init()
+    from colorama import Fore, Back, Style
+except ModuleNotFoundError:
+    pass
 
 
 def languages_banner():
-
-    print("\n[1] English\n"
-          "[2] Portuguese\n"
-          "[3] Turkish\n"
-          "[4] Dutch\n"
-          "[5] Spanish\n"
-          "[6] French\n"
-          "[7] Italian\n"
-          "[8] Czech\n"
-          "[9] Greek\n"
-          "[10] Hungarian\n"
-          "[11] Polish\n"
-          "[12] Romanian\n"
-          "[13] Russian\n"
-          "[14] Japanese\n"
-          "[15] Korean\n")
+    locale_list = ['English', 'Portuguese', 'Turkish', 'Dutch', 'French', 'Italian', 'Czech', 'Greek',
+                   'Hungarian', 'Polish', 'Romanian', 'Russian', 'Spanish', 'Japanese', 'Korean',
+                   'Indonesian', Fore.RED + 'Tagalog (DOES NOT WORK)' + Style.RESET_ALL, 'Chinese', Fore.RED +
+                   'Vietnamese (DOES NOT WORK)' + Style.RESET_ALL]
+    print()
+    counter = 0
+    for locale in locale_list:
+        counter += 1
+        print("[" + str(counter) + "] " + locale)
+    print()

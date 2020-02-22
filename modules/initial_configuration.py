@@ -24,90 +24,111 @@ def initial_configuration():
                 print(Fore.RED + "Not found!" + Style.RESET_ALL + "\nGenerating first time configuration...")
                 configfile = open("user_config.ini", "w+")
                 config.add_section('Locale')
-                config.set('Locale', 'Current', 'default')
-                config.set('Locale', 'Desired', 'default')
+                config.set('Locale', 'Current', 'en_US')
+                config.set('Locale', 'Desired', 'en_US')
                 config.set('Locale', 'IsGarena', 'No')
                 languages_banner()
 
-                user_input = input("Choose your clients current language: ")
-
-                if user_input == '1':
-                    print("English selected.")
-                    initial_configuration.current = locales.english
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '2':
-                    print("Portuguese selected.")
-                    initial_configuration.current = locales.portuguese
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '3':
-                    print("Turkish selected.")
-                    initial_configuration.current = locales.turkish
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '4':
-                    print("Dutch selected.")
-                    initial_configuration.current = locales.dutch
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '5':
-                    print("Spanish selected.")
-                    initial_configuration.current = locales.spanish
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '6':
-                    print("French selected.")
-                    initial_configuration.current = locales.french
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '7':
-                    print("Italian selected.")
-                    initial_configuration.current = locales.italian
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '8':
-                    print("Czech selected.")
-                    initial_configuration.current = locales.czech
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '9':
-                    print("Greek selected.")
-                    initial_configuration.current = locales.greek
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '10':
-                    print("Hungarian selected.")
-                    initial_configuration.current = locales.hungarian
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '11':
-                    print("Polish selected.")
-                    initial_configuration.current = locales.polish
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '12':
-                    print("Romanian selected.")
-                    initial_configuration.current = locales.romanian
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '13':
-                    print("Russian selected.")
-                    initial_configuration.current = locales.russian
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '14':
-                    print("Japanese selected.")
-                    initial_configuration.current = locales.japanese
-                    config['Locale']['Current'] = initial_configuration.current
-
-                elif user_input == '15':
-                    print("Korean selected.")
-                    initial_configuration.current = locales.korean
-
-                else:
-                    print(Fore.RED + "Invalid Entry!" + Style.RESET_ALL)
-                    initial_configuration()
+                # user_input = input("Choose your clients current language: ")
+                #
+                # if user_input == '1':
+                #     print("English selected.")
+                #     initial_configuration.current = locales.english
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '2':
+                #     print("Portuguese selected.")
+                #     initial_configuration.current = locales.portuguese
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '3':
+                #     print("Turkish selected.")
+                #     initial_configuration.current = locales.turkish
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '4':
+                #     print("Dutch selected.")
+                #     initial_configuration.current = locales.dutch
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '5':
+                #     print("Spanish selected.")
+                #     initial_configuration.current = locales.spanish
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '6':
+                #     print("French selected.")
+                #     initial_configuration.current = locales.french
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '7':
+                #     print("Italian selected.")
+                #     initial_configuration.current = locales.italian
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '8':
+                #     print("Czech selected.")
+                #     initial_configuration.current = locales.czech
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '9':
+                #     print("Greek selected.")
+                #     initial_configuration.current = locales.greek
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '10':
+                #     print("Hungarian selected.")
+                #     initial_configuration.current = locales.hungarian
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '11':
+                #     print("Polish selected.")
+                #     initial_configuration.current = locales.polish
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '12':
+                #     print("Romanian selected.")
+                #     initial_configuration.current = locales.romanian
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '13':
+                #     print("Russian selected.")
+                #     initial_configuration.current = locales.russian
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '14':
+                #     print("Japanese selected.")
+                #     initial_configuration.current = locales.japanese
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '15':
+                #     print("Korean selected.")
+                #     initial_configuration.current = locales.korean
+                #
+                # # Newer Locales
+                # elif user_input == '16':
+                #     print("Indonesian selected.")
+                #     initial_configuration.current = locales.indonesian
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '17':
+                #     print("Tagalog selected.")
+                #     initial_configuration.current = locales.tagalog
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '18':
+                #     print("Chinese selected.")
+                #     initial_configuration.current = locales.chinese
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # elif user_input == '19':
+                #     print("Vietnamese selected.")
+                #     initial_configuration.current = locales.vietnamese
+                #     config['Locale']['Current'] = initial_configuration.current
+                #
+                # else:
+                #     print(Fore.RED + "Invalid Entry!" + Style.RESET_ALL)
+                #     initial_configuration()
 
                 user_input = input("Choose your desired client language: ")
 
@@ -186,23 +207,44 @@ def initial_configuration():
                     initial_configuration.desired = locales.korean
                     config['Locale']['Desired'] = initial_configuration.desired
 
+                # Newer Locales
+                elif user_input == '16':
+                    print("Indonesian selected.")
+                    initial_configuration.desired = locales.indonesian
+                    config['Locale']['Desired'] = initial_configuration.desired
+
+                elif user_input == '17':
+                    print("Tagalog selected.")
+                    initial_configuration.desired = locales.tagalog
+                    config['Locale']['Desired'] = initial_configuration.desired
+
+                elif user_input == '18':
+                    print("Chinese selected.")
+                    initial_configuration.desired = locales.chinese
+                    config['Locale']['Desired'] = initial_configuration.desired
+
+                elif user_input == '19':
+                    print("Vietnamese selected.")
+                    initial_configuration.desired = locales.vietnamese
+                    config['Locale']['Desired'] = initial_configuration.desired
+
                 else:
                     print(Fore.RED + "Invalid Entry!" + Style.RESET_ALL)
                     initial_configuration()
 
-                user_input = input("Using Garena client? y/n: ")
-                if user_input == "y":
-                    print("Using Garena client.")
-                    initial_configuration.is_garena = 'yes'
-                    config['Locale']['IsGarena'] = initial_configuration.is_garena
+                # user_input = input("Using Garena client? y/n: ")
+                # if user_input == "y":
+                #     print("Using Garena client.")
+                #     initial_configuration.is_garena = 'yes'
+                #     config['Locale']['IsGarena'] = initial_configuration.is_garena
+                #
+                # if user_input == "n":
+                #     print("Not using Garena client.")
+                initial_configuration.is_garena = 'no'
+                config['Locale']['IsGarena'] = initial_configuration.is_garena
 
-                if user_input == "n":
-                    print("Not using Garena client.")
-                    initial_configuration.is_garena = 'no'
-                    config['Locale']['IsGarena'] = initial_configuration.is_garena
-
-                print("\nReview your selection... \nCurrent Locale: " + initial_configuration.current +
-                      "\nDesired Locale: " + initial_configuration.desired + "\nGarena: " + initial_configuration.is_garena)
+                print("\nReview your selection... \nDesired Locale: " + initial_configuration.desired)
+                # '\nCurrent Locale: " + initial_configuration.current +'
                 user_input = input("\nConfirm? y/n: ")
 
                 if user_input == 'y':
