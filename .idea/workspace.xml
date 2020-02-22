@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/latestrelease.txt" beforeDir="false" afterPath="$PROJECT_DIR$/latestrelease.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/client_execution.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/client_execution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/initial_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/initial_configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/languages.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/languages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/locales.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/locales.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +159,7 @@
       <workItem from="1582189659891" duration="5656000" />
       <workItem from="1582196882340" duration="1467000" />
       <workItem from="1582224012623" duration="448000" />
-      <workItem from="1582354107325" duration="7342000" />
+      <workItem from="1582354107325" duration="7784000" />
     </task>
     <servers />
   </component>
