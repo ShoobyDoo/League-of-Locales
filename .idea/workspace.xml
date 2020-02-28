@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/LANtoENG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LANtoENG.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/shoai.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/shoai.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/latestrelease.txt" beforeDir="false" afterPath="$PROJECT_DIR$/latestrelease.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leagueoflocales.py" beforeDir="false" afterPath="$PROJECT_DIR$/leagueoflocales.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/autoreplacefiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/autoreplacefiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/autoupdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/autoupdate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/client_execution.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/client_execution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/initial_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/initial_configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/languages.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/languages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/league_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/league_directory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/prerequisites.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/prerequisites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +166,7 @@
       <workItem from="1582779996800" duration="746000" />
       <workItem from="1582848188087" duration="423000" />
       <workItem from="1582926104467" duration="2776000" />
-      <workItem from="1582929562508" duration="333000" />
+      <workItem from="1582929562508" duration="484000" />
     </task>
     <servers />
   </component>
