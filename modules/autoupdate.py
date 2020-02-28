@@ -27,7 +27,7 @@ def auto_updates():
     elif __version__ < getVersion.version:
 
         print(Fore.RED + "Out of Date! \n\nCurrent...[" + __version__ + "] \n" + Fore.GREEN + "Latest..." + Fore.GREEN +
-              "[" + getVersion.version + "]\n")
+              "[" + getVersion.version + "]\n" + Style.RESET_ALL + Fore.YELLOW)
 
         release_information = urllib.request.urlopen\
             ("https://raw.githubusercontent.com/Doomlad/League-of-Locales/master/latestrelease.txt")
