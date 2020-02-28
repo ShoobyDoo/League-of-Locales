@@ -26,6 +26,7 @@
 
 [2.01 / 2.02] - Fully automated updates!
 
++ Tiny prompt to notify user about 'delete config'
 + Added fully autonomous updating
 - Removed 'current locale'
 - Removed 'is garena'

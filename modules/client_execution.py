@@ -11,7 +11,8 @@ except ModuleNotFoundError:
 
 
 def client_execution():
-
+    
+    print(Fore.YELLOW + "To reset your configuration, type 'delete config' instead of y/n below." + Style.RESET_ALL)
     user_input = input("You must run league through the old client executable. Open now? y/n: ")
 
     if user_input == "y":
