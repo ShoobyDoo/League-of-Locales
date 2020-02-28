@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/LANtoENG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LANtoENG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/shoai.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/shoai.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latestrelease.txt" beforeDir="false" afterPath="$PROJECT_DIR$/latestrelease.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leagueoflocales.py" beforeDir="false" afterPath="$PROJECT_DIR$/leagueoflocales.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/autoreplacefiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/autoreplacefiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/autoupdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/autoupdate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/client_execution.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/client_execution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/initial_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/initial_configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/languages.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/languages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/league_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/league_directory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/prerequisites.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/prerequisites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,6 +179,8 @@
       <workItem from="1582354107325" duration="11050000" />
       <workItem from="1582779996800" duration="746000" />
       <workItem from="1582848188087" duration="423000" />
+      <workItem from="1582926104467" duration="2776000" />
+      <workItem from="1582929562508" duration="333000" />
     </task>
     <servers />
   </component>
@@ -173,22 +188,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1876" height="261" key="GridCell.Tab.0.bottom" timestamp="1582848611217">
+    <state width="1876" height="261" key="GridCell.Tab.0.bottom" timestamp="1582929077678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582848611217" />
-    <state width="1876" height="261" key="GridCell.Tab.0.center" timestamp="1582848611217">
+    <state width="1876" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582929077678" />
+    <state width="1876" height="261" key="GridCell.Tab.0.center" timestamp="1582929077678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582848611217" />
-    <state width="1876" height="261" key="GridCell.Tab.0.left" timestamp="1582848611217">
+    <state width="1876" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582929077678" />
+    <state width="1876" height="261" key="GridCell.Tab.0.left" timestamp="1582929077677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582848611217" />
-    <state width="1876" height="261" key="GridCell.Tab.0.right" timestamp="1582848611217">
+    <state width="1876" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582929077677" />
+    <state width="1876" height="261" key="GridCell.Tab.0.right" timestamp="1582929077678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582848611217" />
+    <state width="1876" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582929077678" />
     <state x="461" y="161" key="SettingsEditor" timestamp="1581964918962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -201,6 +216,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LeagueOfLocales$languages.coverage" NAME="languages Coverage Results" MODIFIED="1582355883885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
     <SUITE FILE_PATH="coverage/LANtoENG$lantoenglol.coverage" NAME="lantoenglol Coverage Results" MODIFIED="1581964438537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/League_of_Locales_master$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582928298690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeagueOfLocales$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582848194263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeagueOfLocales_Cleanup$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582193556190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -1,8 +1,12 @@
 from setuptools.command.easy_install import main as install
 import time
+import os
 
 
 def prerequisites():
+
+    os.system("cls")
+    print("Checking for prerequisite...", end="")
 
     package = 'colorama'
     try:

@@ -4,7 +4,6 @@ from modules.initial_configuration import initial_configuration
 from modules.league_directory import league_directory
 try:
     from colorama import init
-
     init()
     from colorama import Fore, Back, Style
 except ModuleNotFoundError:

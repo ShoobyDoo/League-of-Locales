@@ -3,7 +3,6 @@ import os
 import subprocess
 from zipfile import ZipFile
 from .__init__ import __version__
-
 try:
     from colorama import init
     init()

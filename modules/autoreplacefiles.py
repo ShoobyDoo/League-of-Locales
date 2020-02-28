@@ -1,6 +1,12 @@
 import os
 import glob
 import shutil
+try:
+    from colorama import init
+    init()
+    from colorama import Fore, Back, Style
+except ModuleNotFoundError:
+    pass
 
 os.chdir("..")
 cur_dir = os.path.abspath(os.curdir)
@@ -8,17 +14,17 @@ cur_dir = os.path.abspath(os.curdir)
 os.chdir(cur_dir)
 for file in glob.glob("*.*"):
     if file == 'user_config.ini':
-        print("[Skipped] : " + file)
+        print(Fore.YELLOW + "[Skipped] : " + file + Style.RESET_ALL)
     else:
-        print("[Deleted] : " + file)
+        print(Fore.RED + "[Deleted] : " + file + Style.RESET_ALL)
         os.remove(file)
 
 os.chdir("./modules")
 for file in glob.glob("*.*"):
     if file == 'autoreplacefiles.py':
-        print("[Skipped] : " + file)
+        print(Fore.YELLOW + "[Skipped] : " + file + Style.RESET_ALL)
     else:
-        print("[Deleted] : " + file)
+        print(Fore.RED + "[Deleted] : " + file + Style.RESET_ALL)
         os.remove(file)
 
 os.chdir("..")
@@ -27,9 +33,9 @@ lo_locale_dir = os.path.abspath(os.curdir)
 
 for file in glob.glob("*.*"):
     if file == 'autoreplacefiles.py':
-        print("[Skipped] : " + file)
+        print(Fore.YELLOW + "[Skipped] : " + file + Style.RESET_ALL)
     else:
-        print("[Copying] : " + file)
+        print(Fore.GREEN + "[Copying] : " + file + Style.RESET_ALL)
         shutil.copy(file, cur_dir)
 
 os.chdir("..")
@@ -44,9 +50,9 @@ lo_locale_modules = os.path.abspath(os.curdir)
 # print(lo_locale_modules)
 for file in glob.glob("*.*"):
     if file == 'autoreplacefiles.py':
-        print("[Skipped] : " + file)
+        print(Fore.YELLOW + "[Skipped] : " + file + Style.RESET_ALL)
     else:
-        print("[Copying] : " + file)
+        print(Fore.GREEN + "[Copying] : " + file + Style.RESET_ALL)
         shutil.copy(file, modules_dir)
 
 print("Cleaning up...", end="")

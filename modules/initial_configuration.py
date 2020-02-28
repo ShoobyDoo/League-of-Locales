@@ -253,7 +253,7 @@ def initial_configuration():
                     config.write(configfile)
                     configfile.close()
                     print(Fore.GREEN + "Done!" + Style.RESET_ALL)
-                    break
+                    initial_configuration()
 
                 elif user_input == 'n':
                     print(Fore.RED + "Restarting..." + Style.RESET_ALL)

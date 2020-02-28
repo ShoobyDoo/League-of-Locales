@@ -1,7 +1,6 @@
 # Simple print of available banners
 try:
     from colorama import init
-
     init()
     from colorama import Fore, Back, Style
 except ModuleNotFoundError:

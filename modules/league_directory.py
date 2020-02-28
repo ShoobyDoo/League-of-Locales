@@ -2,7 +2,6 @@ from modules.initial_configuration import initial_configuration
 import os
 try:
     from colorama import init
-
     init()
     from colorama import Fore, Back, Style
 except ModuleNotFoundError:

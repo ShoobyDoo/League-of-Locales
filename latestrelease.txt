@@ -24,12 +24,18 @@
 - Removed current language prompt
 - Removed is garena prompt
 
-[2.01] - Fully automated updates!
+[2.01 / 2.02] - Fully automated updates!
 
 + Added fully autonomous updating
 - Removed 'current locale'
 - Removed 'is garena'
 
+[2.03] - Tiny formatting update (Download manually from Github)
+
+https://github.com/Doomlad/League-of-Locales
+
++ Added color to updater so its easier to read ;')
++ Small tweaks to the code
 
 ~ [In progress] ~
 
