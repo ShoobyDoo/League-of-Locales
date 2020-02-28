@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/latestrelease.txt" beforeDir="false" afterPath="$PROJECT_DIR$/latestrelease.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/client_execution.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/client_execution.py" afterDir="false" />
-    </list>
+    <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +161,7 @@
       <workItem from="1582779996800" duration="746000" />
       <workItem from="1582848188087" duration="423000" />
       <workItem from="1582926104467" duration="2776000" />
-      <workItem from="1582929562508" duration="484000" />
+      <workItem from="1582929562508" duration="505000" />
     </task>
     <servers />
   </component>

@@ -31,7 +31,7 @@
 - Removed 'current locale'
 - Removed 'is garena'
 
-[2.03] - Tiny formatting update (Download manually from Github)
+[2.03] - Tiny formatting update (Download manually from Github, sowwy ;'/ )
 
 https://github.com/Doomlad/League-of-Locales
 
