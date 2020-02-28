@@ -268,13 +268,13 @@ def initial_configuration():
                     print(Fore.GREEN + "Found!" + Style.RESET_ALL)
 
                     initial_configuration.current = config['Locale']['Current']
-                    print("Current Locale..." + Fore.GREEN + initial_configuration.current + Style.RESET_ALL)
+                    # print("Current Locale..." + Fore.GREEN + initial_configuration.current + Style.RESET_ALL)
 
                     initial_configuration.desired = config['Locale']['Desired']
                     print("Desired Locale..." + Fore.GREEN + initial_configuration.desired + Style.RESET_ALL)
 
                     initial_configuration.is_garena = config['Locale']['IsGarena']
-                    print("Is garena..." + Fore.GREEN + initial_configuration.is_garena + Style.RESET_ALL)
+                    # print("Is garena..." + Fore.GREEN + initial_configuration.is_garena + Style.RESET_ALL)
 
                     break
 

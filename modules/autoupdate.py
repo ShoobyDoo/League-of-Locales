@@ -39,7 +39,7 @@ def auto_updates():
         getRelease(str(read_release))
         print(getRelease.release)
 
-        user_input = input(Style.RESET_ALL + "Would you like to download the latest version? y/n: ")
+        user_input = input(Style.RESET_ALL + "Would you like to download and install the latest version? y/n: ")
 
         if user_input == 'y':
 
@@ -55,10 +55,15 @@ def auto_updates():
                 print(Fore.YELLOW + "Removing Zip File..." + Style.RESET_ALL, end="")
                 os.remove('League-of-Locales-master.zip')
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
-                print(Fore.CYAN + "\nPlease look inside your League of Locales folder. You will now find a 'League-of-"
-                                  "Locales-master' folder inside. This is the latest release, you can safely delete the"
-                                  " old one, or just copy over the files and overwrite. I will figure out a "
-                                  "way to automate this in later releases. Thank you.\n")
+                
+                os.chdir("./modules")
+                os.system("start /B start cmd.exe @cmd /k py autoreplacefiles.py")
+                os.chdir("..")
+
+                # print(Fore.CYAN + "\nPlease look inside your League of Locales folder. You will now find a 'League-of-"
+                #                   "Locales-master' folder inside. This is the latest release, you can safely delete the"
+                #                   " old one, or just copy over the files and overwrite. I will figure out a "
+                #                   "way to automate this in later releases. Thank you.\n")
                 print(Fore.RED + "Exiting..." + Style.RESET_ALL)
                 exit()
 
@@ -69,8 +74,8 @@ def auto_updates():
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
         elif user_input == 'n':
-            print(Fore.YELLOW + "\nIt is recommended to be on the latest release for up to date bug fixes and general "
-                                "optimizations!\n" + Style.RESET_ALL)
+            print(Fore.YELLOW + "\nIt is recommended to be on the latest release for up to date features, bug fixes and "
+                                "general optimizations!\n" + Style.RESET_ALL)
             pass
 
         elif user_input == "":
@@ -87,10 +92,15 @@ def auto_updates():
                 print(Fore.YELLOW + "Removing Zip File..." + Style.RESET_ALL, end="")
                 os.remove('League-of-Locales-master.zip')
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
-                print(Fore.CYAN + "\nPlease look inside your League of Locales folder. You will now find a 'League-of-"
-                                  "Locales-master' folder inside. This is the latest release, you can safely delete the"
-                                  " old one, or just copy over the files and overwrite. I will figure out a "
-                                  "way to automate this in later releases. Thank you.\n")
+
+                os.chdir("./modules")
+                os.system("start /B start cmd.exe @cmd /k py autoreplacefiles.py")
+                os.chdir("..")
+
+                # print(Fore.CYAN + "\nPlease look inside your League of Locales folder. You will now find a 'League-of-"
+                #                   "Locales-master' folder inside. This is the latest release, you can safely delete the"
+                #                   " old one, or just copy over the files and overwrite. I will figure out a "
+                #                   "way to automate this in later releases. Thank you.\n")
                 print(Fore.RED + "Exiting..." + Style.RESET_ALL)
                 exit()
 
@@ -107,4 +117,4 @@ def auto_updates():
     else:
         print(Fore.RED + "Warning! " + Style.RESET_ALL + "Your version " + Fore.RED + "[" + __version__ + f"]"
               + Style.RESET_ALL + " is greater than current latest release " + Fore.GREEN + "[" + getVersion.version
-              + f"]" + Style.RESET_ALL + ". " + Fore.RED + "\nExercise caution!\n" + Style.RESET_ALL)
+              + f"]" + Style.RESET_ALL + " " + Fore.RED + "\nExercise caution!\n" + Style.RESET_ALL)

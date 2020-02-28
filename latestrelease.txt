@@ -1,6 +1,6 @@
 ~ [New features] ~
 
-[1.71]
+[1.71] - Korean update!
 
 + Added Korean support
 + Fixed bug with non-c directories
@@ -8,25 +8,32 @@
 + Numerous other bug fixes
 + In-app update downloader (Done!)
 
-[1.72]
+[1.72] - Small bugfix!
 
 + Fixed bug where even when user is on windows it says unsupported OS.
 
-[1.81]
+[1.81] - Garena support test!
 
 + Added Garena support! (Very messy, but works)
 + Rewrote codebase into segments
 
-[1.91]
+[1.91] - QoL Update + New Languages!
 
 + Added Chinese and Indonesian!
 + Added 'delete config' command at prompt to start league
 - Removed current language prompt
 - Removed is garena prompt
 
+[2.01] - Fully automated updates!
+
++ Added fully autonomous updating
+- Removed 'current locale'
+- Removed 'is garena'
+
+
 ~ [In progress] ~
 
-- General optimizations
-- Clean up commented and unnecessary code
+- General improvements
+- Bugs that get reported
 
 !~ [Enjoy] ~!
