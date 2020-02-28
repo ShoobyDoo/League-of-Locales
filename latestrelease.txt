@@ -30,7 +30,6 @@
 - Removed 'current locale'
 - Removed 'is garena'
 
-
 ~ [In progress] ~
 
 - General improvements
