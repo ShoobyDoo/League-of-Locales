@@ -14,13 +14,14 @@
 
 [1.81] - Garena support test!
 
-+ Added Garena support! (Very messy, but works)
++ Added Garena support! (Very much just a test)
 + Rewrote codebase into segments
 
 [1.91] - QoL Update + New Languages!
 
 + Added Chinese and Indonesian!
 + Added 'delete config' command at prompt to start league
+- Removed garena support
 - Removed current language prompt
 - Removed is garena prompt
 
