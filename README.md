@@ -2,8 +2,7 @@
  > A robust League of Legends Locale modifier!
 
 
-This program allows the user to use any language they desire on any League of Legends server. (Garena unforunately not supported)
-Simply run the script and enter the options as prompted. Creates a configuration file with the 
+This program allows the user to use any language they desire on almost any League of Legends server. Simply run the script and enter the options as prompted. Creates a configuration file with the 
 default current and desired language. Then, simply scans for the Riot Games directory and modifies
 the 'LeagueClientSettings.yaml' file.
 
