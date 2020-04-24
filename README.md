@@ -49,7 +49,7 @@ upcoming features. Report bugs and more as well. Enjoy~!
 
 * Indonesian
 
-Unfortunately, this program does not support garena yet. I tried adding garena support, however garena launches the client by getting access information through the garena client, I am unable to figure out a workaround.
+*My Program does not explicitly handle Garena, though I have figured out a workaround. Garena has been tested on my discord and is working, though there are additional steps that are covered over there that are required.*
 
 *Please extract the files (.zip) before trying to launch!*
 
