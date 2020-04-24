@@ -10,8 +10,7 @@ except ModuleNotFoundError:
 def languages_banner():
     locale_list = ['English', 'Portuguese', 'Turkish', 'Dutch', 'French', 'Italian', 'Czech', 'Greek',
                    'Hungarian', 'Polish', 'Romanian', 'Russian', 'Spanish', 'Japanese', 'Korean',
-                   'Indonesian', Fore.RED + 'Tagalog (DOES NOT WORK)' + Style.RESET_ALL, 'Chinese', Fore.RED +
-                   'Vietnamese (DOES NOT WORK)' + Style.RESET_ALL]
+                   'Indonesian', 'Chinese']
     print()
     counter = 0
     for locale in locale_list:

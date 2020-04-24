@@ -21,6 +21,7 @@ def league_directory():
         league_directory.directory_d = "D:\\Riot Games"
         league_directory.directory_e = "E:\\Riot Games"
 
+
     dir_counter = 0
     league_directory.counter_c = 0
     for root, dirs, files in os.walk(league_directory.directory_c):

@@ -38,9 +38,12 @@ https://github.com/Doomlad/League-of-Locales
 + Added color to updater so its easier to read ;')
 + Small tweaks to the code
 
-~ [In progress] ~
+[2.04] - Much needed bug fixes update!
 
-- General improvements
-- Bugs that get reported
++ Fixed bug where user selects a language and is incorrectly displayed
++ Fixed a bug where it would display initial configuration information twice on config break
++ Added configurable LoL directory option for custom league locations
+- Cleaned up language display table and removed broken locales
+- Cleaned up and removed large portions of unnecessary code
 
 !~ [Enjoy] ~!

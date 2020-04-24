@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="" />
+    <list default="true" id="5efc420e-e5f8-4bc0-8983-9a3f1aab65a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/LANtoENG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LANtoENG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latestrelease.txt" beforeDir="false" afterPath="$PROJECT_DIR$/latestrelease.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/initial_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/initial_configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/languages.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/languages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/league_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/league_directory.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,6 +172,7 @@
       <workItem from="1582848188087" duration="423000" />
       <workItem from="1582926104467" duration="2776000" />
       <workItem from="1582929562508" duration="505000" />
+      <workItem from="1587709087955" duration="2932000" />
     </task>
     <servers />
   </component>
@@ -185,20 +196,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1582929077678" />
-    <state x="461" y="161" key="SettingsEditor" timestamp="1581964918962">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="369" y="112" key="SettingsEditor" timestamp="1587709700532">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="369" y="112" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587709700532" />
     <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1581964918962" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581961636277">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="498" y="178" width="538" height="538" key="search.everywhere.popup" timestamp="1587709425004">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="498" y="178" width="538" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587709425004" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1581961636277" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LeagueOfLocales$languages.coverage" NAME="languages Coverage Results" MODIFIED="1582355883885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
-    <SUITE FILE_PATH="coverage/LANtoENG$lantoenglol.coverage" NAME="lantoenglol Coverage Results" MODIFIED="1581964438537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/League_of_Locales_master$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582928298690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LeagueOfLocales$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582848194263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LeagueOfLocales_Cleanup$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582193556190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LANtoENG$lantoenglol.coverage" NAME="lantoenglol Coverage Results" MODIFIED="1581964438537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LeagueOfLocales$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582848194263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/League_of_Locales_master$leagueoflocales.coverage" NAME="leagueoflocales Coverage Results" MODIFIED="1582928298690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
