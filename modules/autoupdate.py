@@ -38,7 +38,7 @@ def auto_updates():
         getRelease(str(read_release))
         print(getRelease.release)
 
-        user_input = input(Style.RESET_ALL + "Would you like to download and install the latest version? y/n: ")
+        user_input = input(Style.RESET_ALL + "Would you like to download and install the latest version from Github? y/n: ")
 
         if user_input == 'y':
 
