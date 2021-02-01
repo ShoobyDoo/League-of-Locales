@@ -7,7 +7,7 @@ default current and desired language. Then, simply scans for the Riot Games dire
 the 'LeagueClientSettings.yaml' file.
 
 ### Discussion
->Consider joining the [Discord Server](https://discord.gg/4hajzDQ) for quick access to the community and for general discussion about 
+>Consider joining the [Discord Server](https://discord.gg/cuRC9pN) for quick access to the community and for general discussion about 
 upcoming features. Report bugs and more as well. Enjoy~!
 
 ### Supported Locales
