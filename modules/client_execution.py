@@ -24,6 +24,10 @@ def client_execution():
             league_client_dir_e = "F:\\Garena\Games\\32771\\LeagueClient"
             print("Injecting locale...", end="")
             try:
+                try:
+                    os.system()("LoLocalesGARENA_x64.exe")
+                except Exception:
+                    os.system("LoLocalesGARENA_x86.exe")
 
                 os.chdir(league_client_dir_c)
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
@@ -74,6 +78,13 @@ def client_execution():
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
                 print(Fore.GREEN + "Done!" + Style.RESET_ALL)
 
+            else:
+                print(Fore.YELLOW + "Directory: E:\\Riot Games\\League of Legends\\LeagueClient.exe")
+                os.chdir(league_client_dir_e)
+                print("Injecting locale...", end="")
+                subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
+                print(Fore.GREEN + "Done!" + Style.RESET_ALL)
+
             exit()
 
     elif user_input == "n":
@@ -93,6 +104,10 @@ def client_execution():
             league_client_dir_e = "F:\\Garena\Games\\32771\\LeagueClient"
             print("Injecting locale...", end="")
             try:
+                try:
+                    os.system("LoLocalesGARENA_x64.exe")
+                except Exception:
+                    os.system("LoLocalesGARENA_x86.exe")
 
                 os.chdir(league_client_dir_c)
                 subprocess.Popen(['LeagueClient.exe', "--locale=" + initial_configuration.desired])
@@ -115,6 +130,5 @@ def client_execution():
                         pass
 
             print(Fore.GREEN + "Done!" + Style.RESET_ALL)
-            exit()
 
     print(Fore.GREEN + "Done!" + Style.RESET_ALL)

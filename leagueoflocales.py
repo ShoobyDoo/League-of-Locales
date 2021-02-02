@@ -8,6 +8,7 @@ from modules.prerequisites import prerequisites
 from modules.initial_configuration import initial_configuration
 from modules.league_directory import league_directory
 from modules.client_execution import client_execution
+import time
 
 # Try importing colorama, if it fails continue the code to handle installing it automatically
 try:
@@ -30,6 +31,8 @@ def main():
         league_directory()
         client_execution()
 
+        print(Fore.GREEN + "Wrapping up..." + Style.RESET_ALL)
+        time.sleep(3)
 
 if __name__ == '__main__':
     main()

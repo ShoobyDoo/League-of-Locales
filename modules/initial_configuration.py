@@ -129,12 +129,25 @@ def initial_configuration():
                     print(Fore.RED + "Invalid Entry!" + Style.RESET_ALL)
                     initial_configuration()
 
-                initial_configuration.is_garena = 'no'
-                config['Locale']['IsGarena'] = initial_configuration.is_garena
+
+                user_input = input("\nAre you using the Garena client? (Y)es/(N)o: ")
+                
+                if user_input.lower() == 'yes' or user_input.lower() == 'y':
+                    print("Using Garena method.")
+                    initial_configuration.is_garena = 'yes'
+                    config['Locale']['IsGarena'] = initial_configuration.is_garena
+
+                elif user_input.lower() == 'no' or user_input.lower() == 'n':
+                    print("Using Original method.")
+                    initial_configuration.is_garena = 'no'
+                    config['Locale']['IsGarena'] = initial_configuration.is_garena
+                
+                else:
+                    print(Fore.RED + "Input was invalid! ((y)es or (n)o not provided)." + Fore.RESET_ALL)
 
                 print(Fore.YELLOW + "\nReview your selection..." + Fore.CYAN + " \nDesired Locale: " +
-                      initial_configuration.desired + "\nPath to LoL: " + initial_configuration.lolDir_user +
-                      Style.RESET_ALL)
+                      initial_configuration.desired + "\nPath to LoL: " + initial_configuration.lolDir_user + 
+                      "\nUsing garena: " + initial_configuration.is_garena + Style.RESET_ALL)
                 user_input = input("\nConfirm? y/n: ")
 
                 if user_input == 'y':
