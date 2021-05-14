@@ -53,14 +53,14 @@ upcoming features. Report bugs and more as well. Enjoy~!
 *Please extract the files (.zip) before trying to launch!*
 
 ### Prerequisites
-* [Python 3+](https://www.python.org/downloads/)
+* [Python 3.6.X+](https://www.python.org/downloads/)
 * [colorama](https://pypi.org/project/colorama/) (Handled automatically by program)
 
 ### Installation
 > After the initial prerequisite requirement, the program is self explanatory.
 >
 
-*Step 1. Run script with Python3+.*
+*Step 1. Run script with Python3.6.X.*
 
 ![](https://cdn.discordapp.com/attachments/679049093913378822/679188714731208704/69958a0534d53d5e4a62dbf5474226f6.png)
 
