@@ -1,4 +1,4 @@
-from setuptools.command.easy_install import main as install
+# from setuptools.command.easy_install import main as install
 import time
 import os
 
@@ -21,7 +21,7 @@ def prerequisites():
 
             if user_input == 'y':
                 print("Installing " + package + " via pip...", end="")
-                install([package])
+                os.system("pip install " + package)
                 print("Done!\nPlease restart the program.")
                 counter = 4
                 for count in range(3):

@@ -47,4 +47,12 @@ https://github.com/Doomlad/League-of-Locales
 - Cleaned up language display table and removed broken locales
 - Cleaned up and removed large portions of unnecessary code
 
+[2.05] - Garena test 2
+
+[2.10] - Bug Fix
+
++ Fixed bug where program would not launch as easy_install is deprecated
++ Updated prerequisite check to account for deprecated easy_install method
++ Version bump
+
 !~ [Enjoy] ~!
