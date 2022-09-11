@@ -238,7 +238,7 @@ class LeagueOfLocales:
         """
 
         os.chdir(self.lol_path)
-        print(f"Injecting locale {self.all_locales[self.language]}...", end='')
+        print(f"Setting locale to {self.language} ({self.all_locales[self.language]})...", end='')
         subprocess.Popen(['LeagueClient.exe', f"--locale={self.all_locales[self.language]}"])
         print(Colors.affirmize(" done."))
 
