@@ -25,7 +25,7 @@ from modules.helpers import Helpers
 class LeagueOfLocales:
     def __init__(
         self,
-        github_version_url = "https://raw.githubusercontent.com/Doomlad/League-of-Locales/master/__init__.py"
+        github_version_url = "https://raw.githubusercontent.com/ShoobyDoo/League-of-Locales/master/modules/__init__.py"
         ) -> None:
         self.github_version_url = github_version_url
         self.config_filename = "lol.ini"
