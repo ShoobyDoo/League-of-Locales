@@ -55,4 +55,19 @@ https://github.com/Doomlad/League-of-Locales
 + Updated prerequisite check to account for deprecated easy_install method
 + Version bump
 
+[3.0.0] - Completely rewritten from scratch (again)!
+
++ Added an easy to use menu based TUI (Terminal User Interface)
++ Rewrote to longer require the use of any external libraries for coloring output
++ Will now try to automatically find your League folder in a far more intellegent manner
++ Allows you to easily change your League path whenever you need in the program
++ Checks for updates automatically whenever LoLocales is launched
+
+Side note: 
+I mainly decided to rewrite this project because it's been a hobby project of mine for a
+long time and I've learned a whole bunch over the years since. Looking back at it, I kind 
+of cringe at how terrible the code was, so I wanted to give it a much needed overhaul.
+
+Anyways, thanks for reading and I sincerely hope you enjoy League of Locales 3!
+
 !~ [Enjoy] ~!

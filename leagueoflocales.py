@@ -11,6 +11,7 @@ import os
 import platform
 import subprocess
 import time
+import traceback
 import urllib.request
 import shutil
 from os import path
@@ -124,7 +125,7 @@ class LeagueOfLocales:
 
     def select_locale(self) -> None:
         """
-        ### Initiates prompt to get users desired locale
+        ### Initiates prompt to get users desired locale.
         """
 
         for idx, language in enumerate(self.all_locales.keys()):
@@ -132,31 +133,40 @@ class LeagueOfLocales:
             if idx % 5 == 4:
                 print(line)
             else:
-                print(line, end='') if language != list(self.all_locales.keys())[-1] else print(f"{line}\n")
-            
+                print(line, end='') if language != list(self.all_locales.keys())[-1] else print(f"{line}")
+        
+        print(f"\n[{Colors.errorize('B')}] Go back\n") if self.language != None else print()
         while True:
             desired_locale = input(
                 f"Please enter the {Colors.colorize(Colors.LIGHT_CYAN, 'language')} you would like " \
                 f"{Colors.colorize(Colors.LIGHT_WHITE + Colors.BOLD, 'OR')} the cooresponding {Colors.colorize(Colors.LIGHT_RED, 'number')}.\n" \
                 "Locale: "
             )
-            
+
             if desired_locale.capitalize() in self.all_locales.keys():
                 self.language = desired_locale.capitalize()
-                self.write_to_config('locale', self.language) # TODO: FIX THIS, CANT WRITE TO FILE THAT DOESNT EXIST
-                break
-            elif desired_locale == '':
-                break
-            elif 1 <= int(desired_locale) <= len(self.all_locales):
-                self.language = list(self.all_locales.keys())[int(desired_locale) - 1]
-                try:
+                try: 
                     self.write_to_config('locale', self.language)
-                except KeyError:
-                    # tripped likely because its the first run and the config file doesnt exist yet, just ignore.
+                except KeyError: 
                     pass
                 break
+
+            elif str(desired_locale).isnumeric() and 1 <= int(desired_locale) <= len(self.all_locales):
+                self.language = list(self.all_locales.keys())[int(desired_locale) - 1]
+                try: 
+                    self.write_to_config('locale', self.language)
+                except KeyError: 
+                    pass
+                break
+
+            elif desired_locale.lower() == 'b':
+                if self.language == None:
+                    print(Colors.warnize("Can't go back, this is the setup environment. Please enter a locale!"))
+                else:
+                    break
+
             else:
-                print(Colors.colorize(Colors.YELLOW, f'{desired_locale} is not a valid locale, try again.'))
+                print(Colors.colorize(Colors.YELLOW, f"{desired_locale if desired_locale != '' else '{empty}'} is not a valid locale, try again."))
 
 
     def check_config(self) -> None:
@@ -198,11 +208,11 @@ class LeagueOfLocales:
                 used_fmtd = Colors.colorize(Colors.YELLOW, f"Used: {(used // (2**30))} GiB")
                 free_fmtd = Colors.colorize(Colors.LIGHT_GREEN, f"Free: {(free // (2**30))} GiB")
 
-                print(f"Scanning drive [{drive_letter}] ... {total_fmtd} | {used_fmtd} | {free_fmtd}")
+                print(f"Scanning drive [{drive_letter}] ... {total_fmtd:<24} | {used_fmtd:<26} | {free_fmtd:<28}")
 
                 lol_directory = f"{drive_letter}:/Riot Games/League of Legends"
                 if path.exists(lol_directory):
-                    print(Colors.colorize(Colors.LIGHT_GREEN, f"    -> Found @ {lol_directory}"))
+                    print(Colors.colorize(Colors.LIGHT_GREEN, f"    -> Found installation @ {lol_directory}"))
                     lol_installs_found.append(lol_directory)
             
             if len(lol_installs_found) > 1:
@@ -218,7 +228,7 @@ class LeagueOfLocales:
                 print(Colors.colorize(Colors.YELLOW, "* Could not find your League of Legends installation automatically."))
                 lol_directory = input("Please enter the FULL path to your League folder. (Ex. C:/Games/Riot Games/League of Legends)\nPath: ")
             
-            # TODO: Check to see if the path given contains LeagueClient.exe, if not prompt user to double check.
+            # TODO (Low prio): Check to see if the path given contains LeagueClient.exe, if not prompt user to double check.
             print(Colors.colorize(Colors.LIGHT_CYAN, f"-> League Directory: {lol_directory}"))
             config.set('League of Locales', 'league_directory', lol_directory)
             self.lol_path = config['League of Locales']['league_directory']
@@ -232,7 +242,7 @@ class LeagueOfLocales:
             time.sleep(1)
 
 
-    def execute_client(self):
+    def execute_client(self) -> None:
         """
         ### Force the client to set its locale to the users desired one; irrespective of region.
         """
@@ -240,12 +250,12 @@ class LeagueOfLocales:
         os.chdir(self.lol_path)
         print(f"Setting locale to {self.language} ({self.all_locales[self.language]})...", end='')
         subprocess.Popen(['LeagueClient.exe', f"--locale={self.all_locales[self.language]}"])
-        print(Colors.affirmize(" done."))
+        print(Colors.affirmize(" done.\n"))
 
 
     def get_menu(self):
         """
-        ### Prints out the main menu
+        ### Prints out the main menu.
         """
 
         menu_items = [
@@ -262,7 +272,7 @@ class LeagueOfLocales:
 
     def locale_submenu(self):
         """
-        ### Handles functionality of the locale selector sub-menu
+        ### Handles functionality of the locale selector sub-menu.
         """
 
         Helpers.clear_screen()
@@ -273,7 +283,7 @@ class LeagueOfLocales:
 
     def updater_submenu(self):
         """
-        ### Handles functionality of the updater sub-menu
+        ### Handles functionality of the updater sub-menu.
         """
 
         while True:
@@ -292,7 +302,7 @@ class LeagueOfLocales:
 
     def league_folder_submenu(self):
         """
-        ### Handles functionality of the league folder sub-menu
+        ### Handles functionality of the league folder sub-menu.
         """
 
         while True:
@@ -322,45 +332,43 @@ class LeagueOfLocales:
             print(
                 f"League of Locales is a simple program that allows you to force your client to use\n" \
                 "any locale you desire. It bypasses the limited locales set by your game region\n" \
-                "and works in a way that DOES NOT modify any original game files.\n\nDisclaimer:\n" \
-                "The very first public version of League of Locales came out nearly 3 years ago\n" \
-                "and in all that time, there have been no reports of users getting banned for using it.\n" \
-                "That being said, I am NOT responsible for any actions that may be taken against your\n" \
-                "account for using this software or otherwise. By using this software, you understand\n" \
-                "and accept these terms.\n"
+                "and works in a way that DOES NOT modify any original game files.\n"
             )
 
             print(f"[{Colors.errorize('B')}] Go back\n")
             entry = input("Entry: ").lower()
 
-            if entry == 'b':
-                break
+            if entry == 'b': break
 
 
 def main():
-    lol = LeagueOfLocales()
-    
-    while True:
-        lol.startup()
-        entry = input("\nInput (Default=1): ").lower()
+    try:
+        lol = LeagueOfLocales()
+        while True:
+            lol.startup()
+            entry = input("\nInput (Default=1): ").lower()
 
-        if entry == '1' or entry == '':
-            lol.execute_client()
-            print()
-            for i in range(5, 0, -1):
-                print(Colors.infoize(f"Program will now exit in {i} seconds, thank you for using League of Locales."), end='\r')
-                time.sleep(1)
-            break
-        elif entry == '2':
-            lol.locale_submenu()
-        elif entry == '3':
-            lol.updater_submenu()
-        elif entry == '4':
-            lol.league_folder_submenu()
-        elif entry == '5':
-            lol.about_submenu()
-        elif entry == 'q':
-            break
+            if entry == '1' or entry == '':
+                lol.execute_client()
+                for i in range(15, 0, -1):
+                    print(Colors.infoize(f"Program will now exit in {i} seconds, thank you for using League of Locales."), end='\r')
+                    time.sleep(1)
+                break
+            elif entry == '2':
+                lol.locale_submenu()
+            elif entry == '3':
+                lol.updater_submenu()
+            elif entry == '4':
+                lol.league_folder_submenu()
+            elif entry == '5':
+                lol.about_submenu()
+            elif entry == 'q':
+                break
+    except Exception:
+        input(
+            f"\n\n{Colors.errorize(f'A fatal error has occurred with League of Locales. Please see below for details:')}\n\n" 
+            f"{traceback.format_exc()}\n\n{Colors.infoize('Press ENTER to exit.')}"
+        )
 
 
 if __name__ == '__main__':
