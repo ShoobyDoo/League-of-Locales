@@ -89,7 +89,7 @@ class LeagueOfLocales:
 
         if Helpers.compare_versions(latest_version, __version__):
             # Update available
-            print(Colors.colorize(Colors.LIGHT_GREEN, f" done.{Colors.YELLOW} (Update available)"))
+            print(f"{Colors.affirmize(' done.')} {Colors.warnize('(Update available)')}")
             self.update_available = True
         else:
             print(Colors.affirmize(f" done."))
@@ -139,7 +139,7 @@ class LeagueOfLocales:
         while True:
             desired_locale = input(
                 f"Please enter the {Colors.colorize(Colors.LIGHT_CYAN, 'language')} you would like " \
-                f"{Colors.colorize(Colors.LIGHT_WHITE + Colors.BOLD, 'OR')} the cooresponding {Colors.colorize(Colors.LIGHT_RED, 'number')}.\n" \
+                f"{Colors.colorize(Colors.LIGHT_WHITE + Colors.BOLD, 'OR')} the cooresponding {Colors.errorize('number')}.\n" \
                 "Locale: "
             )
 
@@ -166,7 +166,7 @@ class LeagueOfLocales:
                     break
 
             else:
-                print(Colors.colorize(Colors.YELLOW, f"{desired_locale if desired_locale != '' else '{empty}'} is not a valid locale, try again."))
+                print(Colors.warnize(f"{desired_locale if desired_locale != '' else '{empty}'} is not a valid locale, try again."))
 
 
     def check_config(self) -> None:
@@ -183,10 +183,10 @@ class LeagueOfLocales:
             config.read(self.config_filename)
             self.language = config['League of Locales']['locale']
             self.lol_path = config['League of Locales']['league_directory']
-            print(Colors.colorize(Colors.LIGHT_GREEN, " done.\n"))
+            print(Colors.affirmize(" done.\n"))
 
         else:
-            print(f"{Colors.colorize(Colors.LIGHT_GREEN, f' done. {Colors.YELLOW}(Initiating first time setup...)')}\n")
+            print(f"{Colors.affirmize(f' done.')} {Colors.warnize('(Initiating first time setup...)')}\n")
 
             print(Colors.infoize("Setting up configuration...\n"))
             config.add_section('League of Locales')
@@ -205,18 +205,18 @@ class LeagueOfLocales:
                 total, used, free = shutil.disk_usage(f"{drive_letter}:/")
 
                 total_fmtd = Colors.colorize(Colors.BOLD, f"Total: {(total // (2**30))} GiB")
-                used_fmtd = Colors.colorize(Colors.YELLOW, f"Used: {(used // (2**30))} GiB")
-                free_fmtd = Colors.colorize(Colors.LIGHT_GREEN, f"Free: {(free // (2**30))} GiB")
+                used_fmtd = Colors.warnize(f"Used: {(used // (2**30))} GiB")
+                free_fmtd = Colors.infoize(f"Free: {(free // (2**30))} GiB")
 
                 print(f"Scanning drive [{drive_letter}] ... {total_fmtd:<24} | {used_fmtd:<26} | {free_fmtd:<28}")
 
                 lol_directory = f"{drive_letter}:/Riot Games/League of Legends"
                 if path.exists(lol_directory):
-                    print(Colors.colorize(Colors.LIGHT_GREEN, f"    -> Found installation @ {lol_directory}"))
+                    print(Colors.affirmize(f"    -> Found installation @ {lol_directory}"))
                     lol_installs_found.append(lol_directory)
             
             if len(lol_installs_found) > 1:
-                print(Colors.colorize(Colors.YELLOW, "* Multiple League of Legends installations found, please specify desired install."))
+                print(Colors.warnize("Multiple League of Legends installations found, please specify desired install."))
                 for lol_install in lol_installs_found:
                     answer = Helpers.yes_no_prompt(f"Use {lol_install}?")
                     if answer == 'Yes':
@@ -225,7 +225,7 @@ class LeagueOfLocales:
             elif len(lol_installs_found) == 1:
                 lol_directory = lol_installs_found[0]
             else:
-                print(Colors.colorize(Colors.YELLOW, "* Could not find your League of Legends installation automatically."))
+                print(Colors.warnize("Could not find your League of Legends installation automatically."))
                 lol_directory = input("Please enter the FULL path to your League folder. (Ex. C:/Games/Riot Games/League of Legends)\nPath: ")
             
             # TODO (Low prio): Check to see if the path given contains LeagueClient.exe, if not prompt user to double check.
