@@ -48,19 +48,19 @@ upcoming features. Report bugs and more as well. Enjoy~!
 
 * Indonesian
 
-*My Program does not explicitly handle Garena, though I have figured out a workaround. Garena has been tested on my discord and is working, though there are additional steps that are covered over there that are required.*
-
 *Please extract the files (.zip) before trying to launch!*
 
 ### Prerequisites
-* [Python 3.9.X+](https://www.python.org/downloads/)
+* [Python 3.9+](https://www.python.org/downloads/)
 
 ### Installation
 > After the initial prerequisite requirement, the program is self explanatory.
 
-*Step 1. Run script with Python3.9.X.*
+*Step 1. Run script with Python3.9 or greater.*
+* Alternatively, you can use the pre-compiled leagueoflocales.exe file in my releases. <br>
+(It is just the Python script packaged into an .exe executable.) 
 
-*Step 2. Follow prompts for desired locale*
+*Step 2. Follow prompts for desired locale.*
 
 *Step 3. Program will now load into the menu screen each time after initial setup, where you can check for updates, change the locale, and start the client.*
 
