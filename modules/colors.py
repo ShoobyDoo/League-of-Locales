@@ -53,6 +53,21 @@ class Colors:
     
 
     @staticmethod
+    def boldize(string: str):
+        """
+        ### Shorthand for colorize bold.
+        ---
+
+        Args:
+            string (str): Input string to color
+
+        Returns:
+            str: Input string colored bold
+        """
+        return Colors.colorize(Colors.BOLD, string)
+
+
+    @staticmethod
     def infoize(string: str):
         """
         ### Shorthand for colorize purple.

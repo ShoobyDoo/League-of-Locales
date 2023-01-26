@@ -1,5 +1,6 @@
-~ [New features] ~
+~ [Changelog] ~
 
+-------------------------------------------------------------------------------
 [1.71] - Korean update!
 
 + Added Korean support
@@ -7,16 +8,16 @@
 + Added release information for out of date clients
 + Numerous other bug fixes
 + In-app update downloader (Done!)
-
+-------------------------------------------------------------------------------
 [1.72] - Small bugfix!
 
 + Fixed bug where even when user is on windows it says unsupported OS.
-
+-------------------------------------------------------------------------------
 [1.81] - Garena support test!
 
 + Added Garena support! (Very much just a test)
 + Rewrote codebase into segments
-
+-------------------------------------------------------------------------------
 [1.91] - QoL Update + New Languages!
 
 + Added Chinese and Indonesian!
@@ -24,21 +25,21 @@
 - Removed garena support
 - Removed current language prompt
 - Removed is garena prompt
-
+-------------------------------------------------------------------------------
 [2.01 / 2.02] - Fully automated updates!
 
 + Tiny prompt to notify user about 'delete config'
 + Added fully autonomous updating
 - Removed 'current locale'
 - Removed 'is garena'
-
+-------------------------------------------------------------------------------
 [2.03] - Tiny formatting update (Download manually from Github, sowwy ;'/)
 
 https://github.com/Doomlad/League-of-Locales
 
 + Added color to updater so its easier to read ;')
 + Small tweaks to the code
-
+-------------------------------------------------------------------------------
 [2.04] - Much needed bug fixes update!
 
 + Fixed bug where user selects a language and is incorrectly displayed
@@ -46,15 +47,15 @@ https://github.com/Doomlad/League-of-Locales
 + Added configurable LoL directory option for custom league locations
 - Cleaned up language display table and removed broken locales
 - Cleaned up and removed large portions of unnecessary code
-
+-------------------------------------------------------------------------------
 [2.05] - Garena test 2
-
+-------------------------------------------------------------------------------
 [2.10] - Bug Fix
 
 + Fixed bug where program would not launch as easy_install is deprecated
 + Updated prerequisite check to account for deprecated easy_install method
 + Version bump
-
+-------------------------------------------------------------------------------
 [3.0.0] - Completely rewritten from scratch (again)!
 
 + Added an easy to use menu based TUI (Terminal User Interface)
@@ -69,5 +70,18 @@ long time and I've learned a whole bunch over the years since. Looking back at i
 of cringe at how terrible the code was, so I wanted to give it a much needed overhaul.
 
 Anyways, thanks for reading and I sincerely hope you enjoy League of Locales 3!
+-------------------------------------------------------------------------------
+[3.1.0] - Added support for Singapore server + Small improvements
+
++ Added support for SG2/Singapore server. (Shoutout Meowsy#2428 for the solution)
++ Added ensure_client_path() function to ensure League path is a valid installation
++ Added automated update checking and installation
++ Revamped README file to be much more informative with respect to latest update(s)
++ Small tweaks to helper functions and how they are implemented
++ Small tweaks to menu display
+
+Note: If you are a former garena user, and want to see if your server is 
+      supported after the big riot server merge, reach out and work with 
+      me via Discord!
 
 !~ [Enjoy] ~!

@@ -17,6 +17,14 @@ class Helpers:
     """
 
     @staticmethod
+    def set_window_title(new_title: str) -> None:
+        """
+        ### Sets the window title.
+        """
+        os.system(f"title {new_title}")
+
+
+    @staticmethod
     def compare_versions(v1, v2) -> bool:
         """
         ### Compare two different version strings.
@@ -34,7 +42,17 @@ class Helpers:
 
 
     @staticmethod
-    def yes_no_prompt(prompt: str):
+    def yes_no_prompt(prompt: str) -> str:
+        """
+        ### Prompts the user for a yes or no answer.
+        ---
+
+        Args:
+            prompt (str): The prompt to display to the user.
+
+        Returns:
+            str: The user's answer.
+        """
         while True:
             response = input(f"{prompt}\n(Y)es/(N)o: ")
             if response.lower() in ['y', 'yes', 'n', 'no']:
@@ -44,12 +62,21 @@ class Helpers:
 
 
     @staticmethod
-    def clear_screen():
+    def clear_screen() -> None:
+        """
+        ### Clears the screen.
+        """
         os.system('cls')
 
 
     @staticmethod
-    def get_drives():
+    def get_drives() -> list:
+        """
+        ### Gets all the drives on the system.
+
+        Returns:
+            list: A list of all the drives on the system.
+        """
         drives = []
         bm = windll.kernel32.GetLogicalDrives() # bitmap
         for letter in string.ascii_uppercase:
