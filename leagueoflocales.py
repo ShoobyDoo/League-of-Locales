@@ -25,8 +25,8 @@ from modules.helpers import Helpers
 
 class LeagueOfLocales(Helpers, Colors):
     def __init__(
-            self,
-            github_version_url="https://raw.githubusercontent.com/ShoobyDoo/League-of-Locales/master/modules/__init__.py"
+        self,
+        github_version_url="https://raw.githubusercontent.com/ShoobyDoo/League-of-Locales/master/modules/__init__.py"
     ) -> None:
         self.github_version_url = github_version_url
         self.config_filename = "lol.ini"
@@ -309,8 +309,12 @@ class LeagueOfLocales(Helpers, Colors):
                     region = line.split(": ")[-1]
 
                 elif line.strip() == f"{region}:":
-                    print(self.infoize(f"-> Setting locale: {self.colorize(self.LIGHT_CYAN, region)}"))
-                    file_data = file_data.replace(file_data.splitlines()[file_data.splitlines().index(line) + 1], f"    available_locales:\n    - {self.all_locales[self.language]}")
+                    print(self.infoize(f"-> Writing locale: {self.colorize(self.LIGHT_CYAN, region)} to region... "), end='')
+                    file_data = file_data.replace(
+                        file_data.splitlines()[file_data.splitlines().index(line) + 1], 
+                        f"    available_locales:\n    - {self.all_locales[self.language]}"
+                    )
+                    print(self.affirmize(" done."))
 
                 elif "default_locale:" in line:
                     file_data = file_data.replace(line, f"    default_locale: {self.all_locales[self.language]}")
@@ -320,7 +324,6 @@ class LeagueOfLocales(Helpers, Colors):
 
         else:
             print(self.affirmize(" param."))
-
 
         print(self.infoize(f"Setting locale to {self.language} ({self.all_locales[self.language]})..."), end='')
         subprocess.Popen(['LeagueClient.exe', f"--locale={self.all_locales[self.language]}"])
