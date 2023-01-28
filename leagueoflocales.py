@@ -7,7 +7,7 @@
 
 # Imports
 import os
-import re
+import sys
 import time
 import shutil
 import traceback
@@ -16,6 +16,7 @@ import subprocess
 import configparser
 import urllib.request
 from io import TextIOWrapper
+from zipfile import ZipFile
 
 # Local imports
 from modules.__init__ import __version__
@@ -55,7 +56,11 @@ class LeagueOfLocales(Helpers, Colors):
         self.language = None
         self.lol_path = None
         self.patch_method = None
-
+        self.headers = {
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36",
+            "X-Requested-With": "XMLHttpRequest"
+        }
+        self.latest_version = None
         self.set_window_title(f"League of Locales {__version__}")
 
     def print_banner(self) -> None:
@@ -74,6 +79,17 @@ class LeagueOfLocales(Helpers, Colors):
         self.check_config()
         self.get_menu()
 
+    def get_latest_version(self) -> str:
+        """
+        ### Get the latest version from GitHub.
+        """
+
+        latest_version = str(
+            urllib.request.urlopen(self.github_version_url).read().decode('utf-8')
+        ).strip().split('=')[-1].replace('\'', '')
+
+        return latest_version.strip()
+
     def check_update(self) -> None:
         """
         ### Check and perform an automatic update.
@@ -83,11 +99,10 @@ class LeagueOfLocales(Helpers, Colors):
         """
 
         print("Checking for updates...", end='')
-        latest_version = str(
-            urllib.request.urlopen(self.github_version_url).read().decode('utf-8')
-        ).strip().split('=')[-1].replace('\'', '')
+        self.latest_version = self.get_latest_version()
+        # input(self.latest_version)
 
-        if self.compare_versions(latest_version, __version__):
+        if self.compare_versions(self.latest_version, __version__):
             # Update available
             print(f"{self.affirmize(' done.')} {self.warnize('(Update available)')}")
             self.update_available = True
@@ -96,9 +111,52 @@ class LeagueOfLocales(Helpers, Colors):
             self.update_available = False
 
     def do_update(self) -> None:
+        self.check_update()
+        filename = None
         if self.update_available:
-            # TODO: do the auto update logic. (download release, if no exe, then get zip)
-            pass
+            print(self.warnize("-> Update available."))
+            print(self.infoize(f"-> Current version: {self.warnize(__version__)}{self.infoize(' | Latest version: ')}{self.affirmize(self.latest_version)}."))
+            src_link = f"https://github.com/ShoobyDoo/League-of-Locales/releases/download/{self.latest_version}/leagueoflocales{self.latest_version}-src.zip"
+            exe_link = f"https://github.com/ShoobyDoo/League-of-Locales/releases/download/{self.latest_version}/leagueoflocales{self.latest_version}.exe"
+            
+            time.sleep(0.5)
+
+            print(self.infoize("-> Determining download method..."), end='')
+            for entry in os.scandir():
+                if entry.name.endswith(".pys"):
+                    print(self.affirmize(" src."))
+                    filename = f"leagueoflocales{self.latest_version}-src.zip"
+                    print(self.infoize(f"-> Downloading to ./{filename}...\n{'-' * 80}"))
+                    subprocess.call(f"curl -LJO {src_link}")
+                    print(self.infoize('-' * 80))
+                    break
+                elif entry.name.endswith(".exe"):
+                    print(self.affirmize(" exe."))
+                    filename = f"leagueoflocales{self.latest_version}.exe"
+                    print(self.infoize(f"-> Downloading to ./{filename}...\n{'-' * 80}"))
+                    subprocess.call(f"curl -LJO {exe_link}")
+                    print(self.infoize('-' * 80))
+                    break
+            print(self.affirmize(f"Download complete."))
+
+            if filename.endswith(".zip"):
+                time.sleep(0.5)
+
+                print(self.infoize(f"-> Extracting {filename}..."), end='')
+                with ZipFile(filename, 'r') as LoLocales:
+                    LoLocales.extractall(filename.replace(".zip", ""))
+                print(self.affirmize(" done."))
+
+                time.sleep(0.5)
+
+                print(self.infoize("-> Cleaning up..."), end='')
+                os.remove(filename)
+                print(self.affirmize(" done."))
+
+            time.sleep(0.5)
+
+            print(self.infoize(f"-> Update complete. Please find update \"./{filename.replace('.zip', '')}\" within your League of Locales folder ..."))
+            input(self.warnize("\nPress ENTER to return to updater menu. It is recommended that you close out and launch the new version."))
 
     def write_to_config(self, key: str, value: str) -> None:
         """
@@ -364,15 +422,14 @@ class LeagueOfLocales(Helpers, Colors):
 
         while True:
             self.clear_screen()
-            print(self.infoize("[Updater - Work in Progress]\n"))
-            print(
-                f"Status: {self.affirmize('Up to Date') if self.update_available == False else self.warnize('Update available')}\n")
+            print(self.infoize("[Updater - Beta]\n"))
+            print(f"Status: {self.affirmize('Up to Date') if self.update_available == False else self.warnize('Update available')}\n")
 
             print(f"[{self.errorize('1')}] Check now\n[{self.errorize('B')}] Go back\n")
             entry = input("Entry: ").lower()
 
             if entry == '1':
-                self.check_update()
+                self.do_update()
             elif entry == 'b':
                 break
 
@@ -445,14 +502,14 @@ def main():
 
         except FileNotFoundError:
             input(
-                f"\n\n{lol.errorize(f'League of Locales could not find your League of Legends folder. Please try again.')}\n\n" \
+                f"\n\n{LeagueOfLocales.errorize(f'League of Locales could not find your League of Legends folder. Please try again.')}\n\n" \
                 f"{lol.infoize('Press ENTER to attempt a restart. (Could break the config file. If you have issues, delete lol.ini and try again.)')}"
             )
             continue
 
         except Exception:
             input(
-                f"\n\n{lol.errorize(f'A fatal error has occurred with League of Locales, copy and paste this into Doomlads Github support server.')}\n{lol.errorize('Please see below for details:')}\n\n"
+                f"\n\n{LeagueOfLocales.errorize(f'A fatal error has occurred with League of Locales, copy and paste this into Doomlads Github support server.')}\n{LeagueOfLocales.errorize('Please see below for details:')}\n\n"
                 f"{traceback.format_exc()}\n\n{lol.infoize('Press ENTER to attempt a restart. (Could break the config file. If you have issues, delete lol.ini and try again.)')}"
             )
             continue

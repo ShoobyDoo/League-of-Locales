@@ -51,7 +51,6 @@ class Colors:
         """
         return f"{color}{string}{Colors.RESET}"
     
-
     @staticmethod
     def boldize(string: str):
         """
@@ -65,7 +64,6 @@ class Colors:
             str: Input string colored bold
         """
         return Colors.colorize(Colors.BOLD, string)
-
 
     @staticmethod
     def infoize(string: str):
