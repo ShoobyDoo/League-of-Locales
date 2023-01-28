@@ -56,6 +56,7 @@ class LeagueOfLocales(Helpers, Colors):
         self.language = None
         self.lol_path = None
         self.patch_method = None
+        self.riot_client = None
         self.headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36",
             "X-Requested-With": "XMLHttpRequest"
@@ -100,7 +101,6 @@ class LeagueOfLocales(Helpers, Colors):
 
         print("Checking for updates...", end='')
         self.latest_version = self.get_latest_version()
-        # input(self.latest_version)
 
         if self.compare_versions(self.latest_version, __version__):
             # Update available
@@ -236,13 +236,13 @@ class LeagueOfLocales(Helpers, Colors):
         """
         
         while True:
-            lol_directory = input("Please enter the FULL path to your League folder. (Ex. C:/Riot Games/League of Legends)\nPath: ")
             if os.path.isfile(f"{lol_directory}/LeagueClient.exe"):
                 print(self.affirmize("Found LeagueClient.exe! OK."))
                 time.sleep(0.5)
                 break
             else:
                 print(self.warnize("Could not find LeagueClient.exe in given path, please try again."))
+                lol_directory = input("Please enter the FULL path to your League folder. (Ex. C:/Riot Games/League of Legends)\nPath: ")
         
         return lol_directory
 
@@ -258,10 +258,15 @@ class LeagueOfLocales(Helpers, Colors):
 
         if os.path.exists(self.config_filename):
             config.read(self.config_filename)
-            self.language = config['League of Locales']['locale']
-            self.lol_path = config['League of Locales']['league_directory']
-            self.patch_method = config['League of Locales']['patch_method']
-            print(self.affirmize(" done.\n"))
+            try:
+                self.language = config['League of Locales']['locale']
+                self.lol_path = config['League of Locales']['league_directory']
+                self.riot_client = config['League of Locales']['riot_client_directory']
+                self.patch_method = config['League of Locales']['patch_method']
+                print(self.affirmize(" done.\n"))
+            except KeyError as e:
+                print(self.warnize(" error."))
+                print(self.warnize(f"Config file is missing key(s) {e}, please re-run setup.\n(Delete or rename lol.ini to re-run setup)\n"))
 
         else:
             print(f"{self.affirmize(f' done.')} {self.warnize('(Initiating first time setup...)')}\n")
@@ -278,33 +283,14 @@ class LeagueOfLocales(Helpers, Colors):
             print(self.infoize("\nAttempting to locate your League of Legends installation automatically, please wait...\n"))
             time.sleep(1)
 
-            lol_installs_found = []
-            for drive_letter in self.get_drives():
-                total, used, free = shutil.disk_usage(f"{drive_letter}:/")
+            riot_client_directory = self.find_directory("/Riot Games/Riot Client", suppress_drive_info=True)
 
-                total_fmtd = self.colorize(self.BOLD, f"Total: {(total // (2 ** 30))} GiB")
-                used_fmtd = self.warnize(f"Used: {(used // (2 ** 30))} GiB")
-                free_fmtd = self.infoize(f"Free: {(free // (2 ** 30))} GiB")
+            print(self.colorize(self.LIGHT_CYAN, f"-> Riot Client Directory: {riot_client_directory}"))
+            config.set('League of Locales', 'riot_client_directory', riot_client_directory)
+            self.riot_client = config['League of Locales']['riot_client_directory']
 
-                print(f"Scanning drive [{drive_letter}] ... {total_fmtd:<24} | {used_fmtd:<26} | {free_fmtd:<28}")
-
-                lol_directory = f"{drive_letter}:/Riot Games/League of Legends"
-                if os.path.exists(lol_directory):
-                    print(self.affirmize(f"    -> Found installation @ {lol_directory}"))
-                    lol_installs_found.append(lol_directory)
-
-            if len(lol_installs_found) > 1:
-                print(self.warnize("Multiple League of Legends installations found, please specify desired install."))
-                for lol_install in lol_installs_found:
-                    answer = self.yes_no_prompt(f"Use {lol_install}?")
-                    if answer == 'Yes':
-                        lol_directory = lol_install
-                        break
-            elif len(lol_installs_found) == 1:
-                lol_directory = lol_installs_found[0]
-            else:
-                print(self.warnize("Could not find your League of Legends installation automatically."))
-                lol_directory = self.ensure_client_path(lol_directory)
+            lol_directory = self.find_directory("/Riot Games/League of Legends")
+            lol_directory = self.ensure_client_path(lol_directory)
 
             print(self.colorize(self.LIGHT_CYAN, f"-> League Directory: {lol_directory}"))
             config.set('League of Locales', 'league_directory', lol_directory)
@@ -326,6 +312,46 @@ class LeagueOfLocales(Helpers, Colors):
             print(self.infoize(f"\nInitial configuration is complete. Loading menu...\n"))
             time.sleep(1)
 
+    def find_directory(self, directory: str = "/Riot Games/League of Legends", suppress_drive_info = False) -> str:
+        """
+        ### Finds the directory of the League of Legends installation.
+        ---
+        Args:
+            directory (str): Path to the League of Legends installation.
+
+        Returns:
+            str: Path to the League of Legends installation.
+        """
+
+        lol_installs_found = []
+        for drive_letter in self.get_drives():
+            total, used, free = shutil.disk_usage(f"{drive_letter}:/")
+
+            total_fmtd = self.colorize(self.BOLD, f"Total: {(total // (2 ** 30))} GiB")
+            used_fmtd = self.warnize(f"Used: {(used // (2 ** 30))} GiB")
+            free_fmtd = self.infoize(f"Free: {(free // (2 ** 30))} GiB")
+
+            if not suppress_drive_info: print(f"Scanning drive [{drive_letter}] ... {total_fmtd:<24} | {used_fmtd:<26} | {free_fmtd:<28}")
+
+            lol_directory = f"{drive_letter}:{directory}"
+            if os.path.exists(lol_directory):
+                print(self.affirmize(f"    -> Found installation @ {lol_directory}"))
+                lol_installs_found.append(lol_directory)
+
+        if len(lol_installs_found) > 1:
+            print(self.warnize("Multiple installations found, please specify correct path."))
+            for lol_install in lol_installs_found:
+                answer = self.yes_no_prompt(f"Use {lol_install}?")
+                if answer == 'Yes':
+                    lol_directory = lol_install
+                    break
+        elif len(lol_installs_found) == 1:
+            lol_directory = lol_installs_found[0]
+        else:
+            print(self.warnize("Could not find your installation automatically."))
+        
+        return lol_directory
+        
     def get_game_region(self):
         file_data = self.get_sys_file()
         if "default_region: SG2" in file_data:
@@ -383,10 +409,55 @@ class LeagueOfLocales(Helpers, Colors):
         else:
             print(self.affirmize(" param."))
 
-        print(self.infoize(f"Setting locale to {self.language} ({self.all_locales[self.language]})..."), end='')
+        print(self.infoize(f"Sending locale {self.language} ({self.all_locales[self.language]}) to LEAGUE client..."), end='')
         subprocess.Popen(['LeagueClient.exe', f"--locale={self.all_locales[self.language]}"])
-        print(self.affirmize(" done.\n"))
+        print(self.affirmize(" done."))
 
+        if self.is_client_running('LeagueClient.exe'):
+            print(self.affirmize(f"Client is running, client execution sucessful!"))
+            return
+        
+        print(self.warnize("-> Using experimental Riot Client Services method (Experimental)..."))
+        print(self.infoize(f"Sending locale {self.language} ({self.all_locales[self.language]}) to RIOT client..."), end='')
+        subprocess.Popen(
+            [
+            f'{self.riot_client}\\RiotClientServices.exe', 
+            "--launch-product=league_of_legends", 
+            "--launch-patchline=live", 
+            f"--locale={self.all_locales[self.language]}"
+            ]
+        )
+        print(self.affirmize(" done."))
+        
+    def is_client_running(self, client_process: str = "LeagueClient.exe") -> bool:
+        """
+        ### Checks if the league client is running.
+        """
+
+        counter = 0
+        while True:
+            print(self.infoize(f"\rVerifying if {client_process} is running [{counter + 1}/10]..."), end='')
+            if self.is_process_running(client_process):
+                print(self.affirmize(" done."))
+                break
+            elif counter == 10:
+                print(self.warnize(f"\rLeague of Locales was not able to determine if the client '{client_process}' was running within 10 seconds..."))
+                break
+            else:
+                counter += 1
+                time.sleep(1)
+
+    def is_process_running(self, process_name: str) -> bool:
+        """
+        ### Checks if a process is running.
+        """
+
+        tasks = subprocess.check_output('tasklist', shell=False).decode('utf-8')
+        if process_name in tasks:
+            return True
+        else:
+            return False
+    
     def get_menu(self):
         """
         ### Prints out the main menu.
@@ -399,6 +470,7 @@ class LeagueOfLocales(Helpers, Colors):
             f"{self.boldize('Change locale')} [{self.colorize(self.LIGHT_CYAN, self.language)}]",
             f"{self.boldize('Updater')}       [{self.affirmize('Up to Date') if not self.update_available else self.warnize('Update available')}]",
             f"{self.boldize('League Folder')} [{self.colorize(self.LIGHT_CYAN, self.lol_path)}]",
+            f"{self.boldize('Client Folder')} [{self.colorize(self.LIGHT_CYAN, self.riot_client)}]",
             f"{self.boldize('About')}",
             f"{self.boldize('Quit')}"
         ]
@@ -422,7 +494,7 @@ class LeagueOfLocales(Helpers, Colors):
 
         while True:
             self.clear_screen()
-            print(self.infoize("[Updater - Beta]\n"))
+            print(self.infoize("[Updater - Experimental]\n"))
             print(f"Status: {self.affirmize('Up to Date') if self.update_available == False else self.warnize('Update available')}\n")
 
             print(f"[{self.errorize('1')}] Check now\n[{self.errorize('B')}] Go back\n")
@@ -447,10 +519,28 @@ class LeagueOfLocales(Helpers, Colors):
             entry = input("Entry: ").lower()
 
             if entry == '1':
-                # self.lol_path = input("Please enter the FULL path to your League folder. (Ex. C:/Games/Riot Games/League of Legends)\nPath: ")
                 self.lol_path = self.ensure_client_path(self.lol_path)
-
                 self.write_to_config('league_directory', self.lol_path)
+                break
+            elif entry == 'b':
+                break
+    
+    def client_folder_submenu(self):
+        """
+        ### Handles functionality of the client folder sub-menu.
+        """
+
+        while True:
+            self.clear_screen()
+            print(self.infoize("[Client Folder]\n"))
+            print(f"Current: {self.colorize(self.LIGHT_CYAN, self.riot_client)}\n")
+
+            print(f"[{self.errorize('1')}] Change folder\n[{self.errorize('B')}] Go back\n")
+            entry = input("Entry: ").lower()
+
+            if entry == '1':
+                self.riot_client = input("Please enter the FULL path to your Riot Client folder. (Ex. C:/Riot Games/Riot Client)\nPath: ")
+                self.write_to_config('riot_client_directory', self.riot_client)
                 break
             elif entry == 'b':
                 break
@@ -496,6 +586,8 @@ def main():
             elif entry == '4':
                 lol.league_folder_submenu()
             elif entry == '5':
+                lol.client_folder_submenu()
+            elif entry == '6':
                 lol.about_submenu()
             elif entry == 'q':
                 break
