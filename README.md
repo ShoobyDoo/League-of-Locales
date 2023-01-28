@@ -53,7 +53,7 @@ Simply run the script and enter the options as prompted. If you have never used 
 
 ### Installation / Usage (Automatic)
 
-#### *Step 1. Download the [latest](https://github.com/ShoobyDoo/League-of-Locales/releases/latest) release (`leagueoflocales3.X.X.exe`) .*
+#### *Step 1. Download the [latest](https://github.com/ShoobyDoo/League-of-Locales/releases/latest) release `leagueoflocales3.X.X.exe` .*
 
 > ***Note:** If the release does not have a prebuilt binary (exe), you will have to use the manual installation method instead.*
 
@@ -62,7 +62,7 @@ Simply run the script and enter the options as prompted. If you have never used 
 
 ### Installation / Usage (Manual)
 
-#### *Step 1. Download the [latest](https://github.com/ShoobyDoo/League-of-Locales/releases/latest) release source code (`leagueoflocales3.X.X-src.zip`). and extract it to your desired folder. For the examples shown below, I just extract it to my desktop.*
+#### *Step 1. Download the [latest](https://github.com/ShoobyDoo/League-of-Locales/releases/latest) release source code `leagueoflocales3.X.X-src.zip`. and extract it to your desired folder. For the examples shown below, I just extract it to my desktop.*
 
 #### *Step 2. Start the program by double clicking leagueoflocales.py*
 
