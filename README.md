@@ -82,7 +82,7 @@ As you might've noticed, League of Locales pretty much does the heavy lifting fr
 #### *Step 4. All the setup pieces are complete, you can now start the client.*
 
 From the menu, type `1` and press `ENTER` or just press `ENTER` without typing anything and it will launch the client, forcing it to your desired locale. See Below:
-![Client Execution](https://cdn.discordapp.com/attachments/812361563289813063/1068973651233361920/loloc-execution.gif)
+![Client Execution](https://cdn.discordapp.com/attachments/812361563289813063/1068994732224688148/loloc-execution.gif)
 
 ### Discussion
 Consider joining the **[Discord](https://discord.gg/cuRC9pN)** server for quick access to the community and for general discussion about 
