@@ -1,4 +1,16 @@
 # League Of Locales
+
+## Update as of 2024-06-19
+
+**The functionality League of Locales provided has now since been added into Riot Client.**
+**You can modify your game text directly via the launcher settings now, and as such League of Locales will now be archived!**
+
+**I would like to thank everyone who used, helped, and provided suggestions along the way!**
+
+**Ps.<br>I am not sure how effected the Singapore/Garena server is, perhaps it still works?<br>Please reach out to me if you'd like to test it.**
+
+---
+
 #### This program allows the user to use any language they desire on almost any League of Legends server. 
 
 ### Supported Locales
