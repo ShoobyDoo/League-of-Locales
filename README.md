@@ -1,5 +1,8 @@
 # League Of Locales
 
+## Update as of 2024-09-11
+**League of Locales has been brought out of archive mode as it may be possible to still use it using an experimental file permissions hack. (With the introduction of Vanguard, the LeagueClient executable was completely locked down)**
+
 ## Update as of 2024-06-19
 
 **The functionality League of Locales provided has now since been added into Riot Client.**
